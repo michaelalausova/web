@@ -73,22 +73,25 @@
 
 :root {
     --color-background: #474747;
-    --color-primary: #F9BE03;
-    --color-secondary: #CC7B19;
-    --color-secondary-hover: #E59029;
-    --color-background-mobile: #1f1f1f
+    --color-primary: #8b0000;
+    --color-secondary: #8b0000;
+    --color-secondary-hover: #b22222;
+    --color-background-mobile: #1f1f1f;
 }
 
 @-webkit-keyframes fade {
     0% {
         opacity: .1
     }
+
     50% {
         opacity: .2
     }
+
     75% {
         opacity: .3
     }
+
     100% {
         opacity: .4
     }
@@ -98,12 +101,15 @@
     0% {
         opacity: .1
     }
+
     50% {
         opacity: .2
     }
+
     75% {
         opacity: .3
     }
+
     100% {
         opacity: .4
     }
@@ -113,6 +119,7 @@
     0% {
         opacity: 0
     }
+
     100% {
         opacity: 1
     }
@@ -122,6 +129,7 @@
     0% {
         opacity: 0
     }
+
     100% {
         opacity: 1
     }
@@ -131,6 +139,7 @@
     0% {
         -webkit-transform: rotate(0)
     }
+
     100% {
         -webkit-transform: rotate(360deg)
     }
@@ -141,6 +150,7 @@
         -webkit-transform: rotate(0);
         transform: rotate(0)
     }
+
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg)
@@ -168,6 +178,7 @@
         -webkit-transform: rotate(0);
         transform: rotate(0)
     }
+
     to {
         -webkit-transform: rotate(1turn);
         transform: rotate(1turn)
@@ -179,6 +190,7 @@
         -webkit-transform: rotate(0);
         transform: rotate(0)
     }
+
     to {
         -webkit-transform: rotate(1turn);
         transform: rotate(1turn)
@@ -535,7 +547,7 @@ body.shelforder > div.container-fluid > div.row-fluid > div.col-sm-10:before {
 }
 
 #archived_form:hover label:before {
-    color: #fff !important
+    color: #eee;
 }
 
 #archived_form span, div[aria-label="Download, send to Kindle, reading"] > .btn-group:first-child > p:first-child, div[aria-label="Download, send to Kindle, reading"] > .btn-group:first-child > p:last-child {
@@ -574,7 +586,7 @@ body.shelforder > div.container-fluid > div.row-fluid > div.col-sm-10:before {
 
 #archived_cb + label:before {
     content: "\e020";
-    color: hsla(0, 0%, 100%, .7)
+    color: #8b0000
 }
 
 div[aria-label="Edit/Delete book"] > .btn {
@@ -601,7 +613,7 @@ div[aria-label="Edit/Delete book"] > .btn > span {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: hsla(0, 0%, 100%, .7);
+    color: #8b0000;
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
@@ -641,7 +653,6 @@ div[aria-label="Edit/Delete book"] > .btn > span:hover {
     min-width: 225px;
     display: block
 } */
-
 #infscr-loading img, body > div.container-fluid > div > div.col-sm-10 > div.discover > div.isotope:after, body > div.container-fluid > div > div.col-sm-10 > div.discover > div.isotope:before {
     display: none
 }
@@ -670,14 +681,14 @@ div[aria-label="Edit/Delete book"] > .btn > span:hover {
 }
 
 a {
-    color: hsla(0, 0%, 100%, .45)
+    color: #eee
 }
 
 a:hover {
     -webkit-transition: color .2s;
     -o-transition: color .2s;
     transition: color .2s;
-    color: #fff
+    color: #eee
 }
 
 #titlebar a {
@@ -761,7 +772,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-header > a
 }
 
 .home-btn > a {
-    color: rgba(255, 255, 255, .7);
+    color: #8b0000;
     font-family: plex-icons-new, serif;
     line-height: 60px;
     position: relative;
@@ -819,7 +830,7 @@ body:not(.read-frame) {
     -o-background-size: auto, cover !important;
     line-height: 1.71428571;
     background: url(images/caliblur/blur-noise.png), var(--color-background);
-    color: hsla(0, 0%, 100%, .45);
+    color: #8b0000;
     font-family: Open Sans Semibold, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: 400;
     overflow: hidden;
@@ -1091,7 +1102,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > form:before {
     display: block;
     font-family: plex-icons, serif;
     position: absolute;
-    color: #eee;
+    color: #8b0000;
     font-weight: 400;
     font-size: 14px;
     top: 18px;
@@ -1180,7 +1191,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-collapse.c
 body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-collapse.collapse > ul > li > a {
     height: 60px;
     padding: 20px 10px;
-    color: hsla(0, 0%, 100%, .7)
+    color: #8b0000
 }
 
 body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-collapse.collapse > ul > li > #top_admin > .glyphicon-dashboard::before {
@@ -1269,8 +1280,8 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: hsla(0, 0%, 100%, .25);
+    color: #eee;
+    background-color: #b22222;
     border-color: hsla(0, 0%, 100%, .25)
 }
 
@@ -1280,7 +1291,7 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .open > .dropdown-toggle.btn-default {
     border-color: var(--color-secondary-hover);
-    color: #fff;
+    color: #eee;
     background-color: var(--color-secondary-hover)
 }
 
@@ -1304,8 +1315,8 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 
 .navigation .nav-head {
     margin: 0;
-    color: hsla(0, 0%, 100%, .3);
-    font-size: 12px;
+    color: #8b0000;
+    font-size: 15px;
     font-family: Open Sans Bold, Helvetica Neue, Helvetica, Arial, sans-serif;
     line-height: 45px;
     padding-left: 25px
@@ -1487,8 +1498,7 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 
 body > div.container-fluid > div.row-fluid > div.col-sm-10 > div.discover > form > div.col-sm-12 > div.col-sm-12 > div.col-sm-2 > a:before {
     z-index: 9;
-    zoom: .8
-}
+    zoom: .8 }
 
 #books > .cover > a:hover:before, #books_rand > .cover > a:hover:before, .book.isotope-item > .cover > a:hover:before, body > div.container-fluid > div.row-fluid > div.col-sm-10 > div.discover > form > div.col-sm-12 > div.col-sm-12 > div.col-sm-2 > a:hover:before {
     -o-transition: opacity .2s;
@@ -1596,7 +1606,7 @@ body > div.container-fluid > div.row-fluid > div.col-sm-10 > div.discover > form
     color: #fff;
     text-align: center;
     white-space: nowrap;
-    background-color: rgba(0, 0, 0, .15);
+    background-color: #8b0000;
     border-radius: 3px
 }
 
@@ -1912,7 +1922,7 @@ body:not(.admin) > div.container-fluid > div > div.col-sm-10 > div.discover > h1
     width: calc(100vw - 240px);
     height: 60px;
     padding-left: 25px;
-    color: hsla(0, 0%, 100%, .7);
+    color: transparent;
     font-family: "Open Sans Semibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     line-height: 60px;
@@ -1941,9 +1951,7 @@ body > div.container-fluid > div > div.col-sm-10 > div.discover > form > .btn.bt
     z-index: 99999
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.pagination .page-next > a,
-body > div.container-fluid > div > div.col-sm-10 > div.pagination .page-previous > a
-{
+body > div.container-fluid > div > div.col-sm-10 > div.pagination .page-next > a, body > div.container-fluid > div > div.col-sm-10 > div.pagination .page-previous > a {
     top: 0;
     font-family: plex-icons-new, serif;
     font-weight: 100;
@@ -1972,15 +1980,13 @@ body > div.container-fluid > div > div.col-sm-10 > div.pagination .page-previous
     color: #fff !important
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-item:not(.page-next):not(.page-previous)
-{
+body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-item:not(.page-next):not(.page-previous) {
     display: none
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-next > a,
-body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-previous > a {
+body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-next > a, body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-previous > a {
     color: transparent;
-    background-color:transparent;
+    background-color: transparent;
     margin-left: 0;
     width: 65px;
     padding: 0;
@@ -1989,8 +1995,7 @@ body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-previo
     border: none;
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-next > a:before,
-body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-previous > a:before {
+body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-next > a:before, body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-previous > a:before {
     visibility: visible;
     color: hsla(0, 0%, 100%, .35);
     height: 60px;
@@ -2009,8 +2014,7 @@ body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-previo
     content: "\EA33";
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-next > a:hover:before,
-body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-previous > a:hover:before {
+body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-next > a:hover:before, body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-previous > a:hover:before {
     color: #fff
 }
 
@@ -2018,7 +2022,7 @@ body > div.container-fluid > div > div.col-sm-10 > div.pagination > .page-previo
     display: none
 }
 
-body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container1 > div.col-xs-12, body.downloadlist > div.container-fluid > div > div.col-sm-10 > div.container1 > div.col-xs-12, body.catlist > div.container-fluid > div > div.col-sm-10 > div.container1 > div.col-xs-12, body.langlist > div.container-fluid > div > div.col-sm-10 > div.container1 > div.col-sm-6, body.serieslist > div.container-fluid > div > div.col-sm-10 > div.container1 > div.col-sm-6 {
+body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container > div.col-xs-12, body.catlist > div.container-fluid > div > div.col-sm-10 > div.container > div.col-xs-12, body.langlist > div.container-fluid > div > div.col-sm-10 > div.container > div.col-sm-6, body.serieslist > div.container-fluid > div > div.col-sm-10 > div.container > div.col-sm-6 {
     width: 100%
 }
 
@@ -2033,16 +2037,17 @@ body.serieslist > div.container-fluid > div > div.col-sm-10:before {
     left: 240px;
     top: 240px;
     width: calc(20% - 55px);
-    text-align: center
+    text-align: center;
+    color: #8b0000
 }
 
 @media screen and (max-width: 992px) {
-  body.serieslist > div.container-fluid > div.row-fluid > div.col-sm-10:before {
-      top: 180px;
-  }
+    body.serieslist > div.container-fluid > div.row-fluid > div.col-sm-10:before {
+        top: 180px;
+    }
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.container1 {
+body > div.container-fluid > div > div.col-sm-10 > div.container {
     width: calc(80% - 30px);
     margin: 120px 0 30px 20%;
     border-top: 2px solid rgba(0, 0, 0, .3);
@@ -2051,19 +2056,19 @@ body > div.container-fluid > div > div.col-sm-10 > div.container1 {
     max-width: calc(80% - 30px)
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.container1 > div {
+body > div.container-fluid > div > div.col-sm-10 > div.container > div {
     padding: 0
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.container1 > div > .row {
+body > div.container-fluid > div > div.col-sm-10 > div.container > div > .row {
     padding: 4px 0
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.container1 > div > .row:nth-of-type(even) {
+body > div.container-fluid > div > div.col-sm-10 > div.container > div > .row:nth-of-type(even) {
     background: hsla(0, 0%, 100%, .02)
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.container1 > div > .row > .col-xs-6 {
+body > div.container-fluid > div > div.col-sm-10 > div.container > div > .row > .col-xs-6 {
     width: calc(91.666% - 30px);
     overflow: hidden;
     -o-text-overflow: ellipsis;
@@ -2072,7 +2077,7 @@ body > div.container-fluid > div > div.col-sm-10 > div.container1 > div > .row >
     padding-left: 60px
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.container1 > div > .row > .col-xs-6 > a {
+body > div.container-fluid > div > div.col-sm-10 > div.container > div > .row > .col-xs-6 > a {
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -2081,8 +2086,7 @@ body > div.container-fluid > div > div.col-sm-10 > div.container1 > div > .row >
     transition: all 0s
 }
 
-
-body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container1 {
+body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container {
     width: calc(80% - 30px);
     margin: 120px 0 30px 20%;
     border-top: 2px solid rgba(0, 0, 0, .3);
@@ -2091,19 +2095,19 @@ body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container1
     max-width: calc(80% - 30px)
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container1 > div {
+body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container > div {
     padding: 0
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container1 > div > .row {
+body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container > div > .row {
     padding: 4px 0
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container1 > div > .row:nth-of-type(even) {
+body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container > div > .row:nth-of-type(even) {
     background: hsla(0, 0%, 100%, .02)
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container1 > div > .row > .col-xs-6 {
+body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container > div > .row > .col-xs-6 {
     width: calc(91.666% - 30px);
     overflow: hidden;
     -o-text-overflow: ellipsis;
@@ -2112,7 +2116,7 @@ body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container1
     padding-left: 60px
 }
 
-body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container1 > div > .row > .col-xs-6 > a {
+body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container > div > .row > .col-xs-6 > a {
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -2126,24 +2130,10 @@ body > div.container-fluid > div > div.col-sm-10 > div.discover > div.container1
     -o-transition: background-color .2s, color .2s
 }
 
-body.catlist > div.container-fluid > div.row-fluid > div.col-sm-10:before {
-    content: "\E067";
-    font-family: Glyphicons Regular, serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    font-size: 6vw;
-    position: fixed;
-    left: 240px;
-    top: 240px;
-    width: calc(20% - 55px);
-    text-align: center
-}
-
 @media screen and (max-width: 992px) {
-  body.catlist > div.container-fluid > div.row-fluid > div.col-sm-10:before {
-      top: 180px;
-  }
+    body.catlist > div.container-fluid > div.row-fluid > div.col-sm-10:before {
+        top: 180px;
+    }
 }
 
 body.authorlist > div.container-fluid > div.row-fluid > div.col-sm-10:before, body.langlist > div.container-fluid > div > div.col-sm-10:before {
@@ -2156,30 +2146,24 @@ body.authorlist > div.container-fluid > div.row-fluid > div.col-sm-10:before, bo
     top: 180px;
     width: calc(20% - 55px);
     text-align: center;
-    position: fixed
-}
-
-body.authorlist > div.container-fluid > div.row-fluid > div.col-sm-10:before {
-    content: "\e008";
-    top: 240px;
+    position: fixed;
+    color: #8b0000
 }
 
 @media screen and (max-width: 992px) {
-  body.authorlist > div.container-fluid > div.row-fluid > div.col-sm-10:before {
-      top: 180px;
-  }
+    body.authorlist > div.container-fluid > div.row-fluid > div.col-sm-10:before {
+        top: 180px;
+    }
 }
 
 body.langlist > div.container-fluid > div > div.col-sm-10:before {
-    content: "\e034";
-    top: 240px;
+    content: "\e034"
 }
 
-
-body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container1:before, body.downloadlist > div.container-fluid > div > div.col-sm-10 > div.container1:before, body.catlist > div.container-fluid > div > div.col-sm-10 > div.container1:before, body.langlist > div.container-fluid > div > div.col-sm-10 > div.container1:before, body.me > div.container-fluid > div > div.col-sm-10 > div.discover:before, body.serieslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
+body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container:before, body.catlist > div.container-fluid > div > div.col-sm-10 > div.container:before, body.langlist > div.container-fluid > div > div.col-sm-10 > div.container:before, body.me > div.container-fluid > div > div.col-sm-10 > div.discover:before, body.serieslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
     top: 60px;
     font-size: 24px;
-    color: #eee;
+    color: #8b0000;
     line-height: 1;
     padding-left: 15px;
     position: absolute;
@@ -2187,104 +2171,63 @@ body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container1:bef
     font-weight: 400
 }
 
-body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-    content: "Authors";
+body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+    content: "Autoři";
     top: 115px;
-    display: table;
 }
 
 @media screen and (max-width: 992px) {
-  body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      top: 60px;
-  }
+    body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+        top: 60px;
+    }
+}
+
+body.catlist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+    content: "Štítky";
+    top: 115px;
 }
 
 @media screen and (max-width: 992px) {
-  body.downloadlist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      top: 60px;
-  }
+    body.catlist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+        top: 60px;
+    }
 }
 
-body.downloadlist > div.container-fluid > div.row-fluid > div.col-sm-10:before {
-    font-family: Glyphicons Halflings, serif;
-    content: "\E026";
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    font-size: 6vw;
-    position: fixed;
-    left: 240px;
-    top: 240px;
-    width: calc(20% - 55px);
-    text-align: center
-}
-
-
-@media screen and (max-width: 992px) {
-  body.downloadlist > div.container-fluid > div.row-fluid > div.col-sm-10:before {
-      top: 180px;
-  }
-}
-
-body.downloadlist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-    content: "Downloads";
+body.serieslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+    content: "Série";
     top: 115px;
-    display: table;
-}
-
-
-body.catlist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-    content: "Categories";
-    top: 115px;
-    display: table;
 }
 
 @media screen and (max-width: 992px) {
-  body.catlist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      top: 60px;
-  }
+    body.serieslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+        top: 60px;
+    }
 }
 
-body.serieslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-    content: "Series";
+body.ratingslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+    content: "Formáty";
     top: 115px;
-    display: table;
 }
 
 @media screen and (max-width: 992px) {
-  body.serieslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      top: 60px;
-  }
+    body.ratingslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+        top: 60px;
+    }
 }
 
-body.ratingslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-    content: "File formats";
+body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+    content: "Formáty";
     top: 115px;
-    display: table;
 }
 
 @media screen and (max-width: 992px) {
-  body.ratingslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      top: 60px;
-  }
+    body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+        top: 60px;
+    }
 }
 
-body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-    content: "File formats";
-    top: 115px;
-    display: table;
-}
-
-@media screen and (max-width: 992px) {
-  body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      top: 60px;
-  }
-}
-
-body.langlist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-    content: "Languages";
-    top: 115px;
-    display: table;
+body.langlist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+    content: "Jazyky"
 }
 
 body.advsearch > div.container-fluid > div > div.col-sm-10 > div.col-md-10.col-lg-6 {
@@ -2298,7 +2241,7 @@ body.advsearch > div.container-fluid > div > div.col-sm-10 > div.col-md-10.col-l
 }
 
 body.me > div.container-fluid > div > div.col-sm-10 > div.discover:before {
-    content: "My Profile"
+    content: "Můj profil"
 }
 
 .well {
@@ -3001,31 +2944,22 @@ body > div.container-fluid > div > div.col-sm-10 > div > div > div.col-sm-3.col-
     margin-top: 24px
 }
 
-.book-meta > .bookinfo > .languages > span:first-of-type,
-.book-meta > .bookinfo > .publishers > span:first-of-type,
-.book-meta > .bookinfo > .publishing-date > span:first-of-type,
-.real_custom_columns > span:first-of-type {
-    color: hsla(0, 0%, 100%, .45);
+.book-meta > .bookinfo > .languages > span:first-of-type, .book-meta > .bookinfo > .publishers > span:first-of-type, .book-meta > .bookinfo > .publishing-date > span:first-of-type, .real_custom_columns > span:first-of-type {
+    color: #8b0000;
     text-transform: uppercase;
     font-family: Open Sans Bold, Helvetica Neue, Helvetica, Arial, sans-serif;
     width: 200px;
     display: inline-block
 }
 
-.book-meta > .bookinfo > .languages > span:last-of-type,
-.book-meta > .bookinfo > .publishers > span:last-of-type,
-.book-meta > .bookinfo > .publishing-date > span:last-of-type,
-.real_custom_columns > span:last-of-type {
+.book-meta > .bookinfo > .languages > span:last-of-type, .book-meta > .bookinfo > .publishers > span:last-of-type, .book-meta > .bookinfo > .publishing-date > span:last-of-type, .real_custom_columns > span:last-of-type {
     font-family: Open Sans Semibold, Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #fff;
+    color: #eee;
     font-size: 15px;
     -webkit-font-smoothing: antialiased
 }
 
-.book-meta > .bookinfo > .languages > span > a,
-.book-meta > .bookinfo > .publishers > span > a,
-.book-meta > .bookinfo > .publishing-date > span > a,
-.real_custom_columns > span > a {
+.book-meta > .bookinfo > .languages > span > a, .book-meta > .bookinfo > .publishers > span > a, .book-meta > .bookinfo > .publishing-date > span > a, .real_custom_columns > span > a {
     color: #fff
 }
 
@@ -3039,7 +2973,7 @@ body > div.container-fluid > div > div.col-sm-10 > div > div > div.col-sm-3.col-
 
 .book-meta > h2 {
     font-size: 24px;
-    color: #eee;
+    color: #8b0000;
     font-weight: 400;
     line-height: 1;
     margin: 0;
@@ -3048,7 +2982,6 @@ body > div.container-fluid > div > div.col-sm-10 > div > div > div.col-sm-3.col-
 }
 
 .book-meta > .author > a:first-of-type:before {
-    content: "Author — ";
     color: hsla(0, 0%, 100%, .45);
     position: absolute;
     left: 15px;
@@ -3075,7 +3008,7 @@ body.book .author {
     line-height: 30px;
     margin-top: -5px;
     max-width: calc(100% - 176px);
-    margin-left: 76px
+    margin-left: px
 }
 
 .book-meta > p {
@@ -3095,7 +3028,7 @@ body.book .author {
 
 .book-meta > .languages > p > .label-default {
     background: 0 0;
-    color: hsla(0, 0%, 100%, .45);
+    color: #b22222;
     padding: 0;
     font-size: 14px
 }
@@ -3128,7 +3061,7 @@ body.book .author {
 .book-meta > .bookinfo > .identifiers .glyphicon-link, .book-meta > .bookinfo > .tags .glyphicon-tags {
     margin-left: -40px;
     margin-right: 17px;
-    color: hsla(0, 0%, 100%, .45);
+    color: #8b0000;
     width: 20px;
     vertical-align: text-bottom
 }
@@ -3175,7 +3108,7 @@ div.btn-group[role=group][aria-label="Download, send to Kindle, reading"] > div.
     float: left
 }
 
-#add-to-shelf, #btnGroupDrop1, #readbtn,  #sendbtn, .book-meta .btn-toolbar > .btn-group > .btn-group:nth-child(1) > a:first-of-type, .book-meta .btn-toolbar > .btn-group > .btn-warning, .btn-toolbar > .btn-group > #btnGroupDrop2, .btn-toolbar > .btn-group > .btn-group > #btnGroupDrop2 {
+#add-to-shelf, #btnGroupDrop1, #readbtn, #sendbtn, .book-meta .btn-toolbar > .btn-group > .btn-group:nth-child(1) > a:first-of-type, .book-meta .btn-toolbar > .btn-group > .btn-warning, .btn-toolbar > .btn-group > #btnGroupDrop2, .btn-toolbar > .btn-group > .btn-group > #btnGroupDrop2 {
     background: 0 0;
     color: transparent;
     width: 50px;
@@ -3190,7 +3123,7 @@ div.btn-group[role=group][aria-label="Download, send to Kindle, reading"] > div.
 }
 
 #add-to-shelf > span, #btnGroupDrop1 > span, #readbtn > span, #sendbtn > span, .book-meta .btn-toolbar > .btn-group > .btn-group:nth-child(1) > a:first-of-type > span, .book-meta .btn-toolbar > .btn-group > .btn-warning > span, .btn-toolbar > .btn-group > #btnGroupDrop2 > span, .btn-toolbar > .btn-group > .btn-group > #btnGroupDrop2 > span {
-    color: hsla(0, 0%, 100%, .7)
+    color: #8b0000
 }
 
 #add-to-shelf:hover span, #btnGroupDrop1:hover > span, #readbtn:hover > span, #sendbtn:hover > span, .book-meta .btn-toolbar > .btn-group > .btn-group:nth-child(1) > a:first-of-type:hover > span, .book-meta .btn-toolbar > .btn-group > .btn-warning:hover > span, .btn-toolbar > .btn-group > #btnGroupDrop2:hover > span, .btn-toolbar > .btn-group > .btn-group > #btnGroupDrop2:hover > span {
@@ -3279,7 +3212,7 @@ div.btn-group[role=group][aria-label="Download, send to Kindle, reading"] > div.
 }
 
 .btn-primary.active, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open .dropdown-toggle.btn-primary {
-    background-color: hsla(0, 0%, 100%, .3)
+    background-color: #8b0000
 }
 
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open > .dropdown-toggle.btn-primary.focus, .open > .dropdown-toggle.btn-primary:focus, .open > .dropdown-toggle.btn-primary:hover {
@@ -3338,13 +3271,15 @@ div.btn-group[role=group][aria-label="Download, send to Kindle, reading"] .dropd
     border: 0;
     overflow-y: auto;
 }
+
 .dropdown-menu:not(.datepicker-dropdown):not(.profileDropli) {
     left: 0 !important;
 }
+
 #add-to-shelves {
-  min-height: 48px;
-  max-height: calc(100% - 120px);
-  overflow-y: auto;
+    min-height: 48px;
+    max-height: calc(100% - 120px);
+    overflow-y: auto;
 }
 
 .dropdown-menu > li > a {
@@ -3366,9 +3301,8 @@ div.btn-group[role=group][aria-label="Download, send to Kindle, reading"] .dropd
     box-shadow: none
 }
 
-.book-meta > .bookinfo .btn-info,
-.book-meta > .bookinfo .btn-success {
-    background-color: rgba(0, 0, 0, .15);
+.book-meta > .bookinfo .btn-info, .book-meta > .bookinfo .btn-success {
+    background-color: #b22222;
     color: hsla(0, 0%, 100%, .7);
     font-size: 13px;
     display: inline-block;
@@ -3381,14 +3315,12 @@ div.btn-group[role=group][aria-label="Download, send to Kindle, reading"] .dropd
     text-transform: none
 }
 
-.book-meta > .bookinfo .btn-info:hover,
-.book-meta > .bookinfo .btn-success:hover {
+.book-meta > .bookinfo .btn-info:hover, .book-meta > .bookinfo .btn-success:hover {
     color: #fff;
     text-decoration: underline
 }
 
-.book-meta > .bookinfo .btn-info,
-.book-meta > .bookinfo .btn-success {
+.book-meta > .bookinfo .btn-info, .book-meta > .bookinfo .btn-success {
     overflow: hidden;
     text-align: center;
     white-space: nowrap;
@@ -3751,13 +3683,13 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-header > a
 
 .btn-danger {
     color: #fff;
-    background-color: #ac3323;
-    border-color: #ac3323
+    background-color: #b22222;
+    border-color: #b22222
 }
 
 .btn-danger:hover {
-    background-color: #ce3d2a;
-    border-color: #641e14
+    background-color: #8b0000;
+    border-color: #8b0000
 }
 
 .caret {
@@ -3777,7 +3709,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-header > a
 }
 
 .plexBack > a {
-    color: rgba(255, 255, 255, .7);
+    color: #8b0000;
     font-family: plex-icons-new, serif;
     -webkit-font-variant-ligatures: normal;
     font-variant-ligatures: normal;
@@ -3991,23 +3923,8 @@ body.author img.bg-blur[src=undefined] {
     display: none
 }
 
-body.author:not(.authorlist) .undefined-img:before {
-    content: "\e008";
-    font-family: 'Glyphicons Halflings', serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    font-size: 6vw;
-    position: fixed;
-    left: 240px;
-    top: 200px;
-    width: 20%;
-    text-align: center;
-    z-index: 9
-}
-
 .author > .container-fluid > .row-fluid > .col-sm-10 > h2:before {
-    content: "About Author";
+    content: "Autor";
     width: calc(100vw - 240px);
     height: 60px;
     margin: 0;
@@ -4379,7 +4296,6 @@ body.advanced_search > div.container-fluid > div.row-fluid > div.col-sm-10 > div
 
 .navbar-right > li > ul.dropdown-menu.offscreen {
     right: -10px
-
 }
 
 .login .plexBack, body.login > div.container-fluid > div.row-fluid > div.col-sm-2, body.login > div.navbar.navbar-default.navbar-static-top > div > form {
@@ -4861,13 +4777,14 @@ body.advsearch:not(.blur) > div.container-fluid > div.row-fluid > div.col-sm-10 
 }
 
 body.search #shelf-actions button#add-to-shelf {
-  height: 40px;
+    height: 40px;
 }
+
 @media screen and (max-width: 767px) {
-  body.search .discover, body.advsearch .discover {
-    display: flex;
-    flex-direction: column;
-  }
+    body.search .discover, body.advsearch .discover {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 body.read:not(.blur) a[href*=readbooks] {
@@ -5174,7 +5091,7 @@ body.login > div.navbar.navbar-default.navbar-static-top > div > div.navbar-head
     pointer-events: none
 }
 
-#DeleteDomain:hover:before, #RestartDialog:hover:before, #ShutdownDialog:hover:before, #StatusDialog:hover:before,  #deleteButton, #deleteModal:hover:before, #cancelTaskModal:hover:before, body.mailset > div.container-fluid > div > div.col-sm-10 > div.discover td > a:hover {
+#DeleteDomain:hover:before, #RestartDialog:hover:before, #ShutdownDialog:hover:before, #StatusDialog:hover:before, #deleteButton, #deleteModal:hover:before, #cancelTaskModal:hover:before, body.mailset > div.container-fluid > div > div.col-sm-10 > div.discover td > a:hover {
     cursor: pointer
 }
 
@@ -6463,7 +6380,7 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
         display: none !important
     }
 
-    .shelforder > .container-fluid > .row-fluid > .col-sm-10 > div.col-sm-6.col-lg-6.col-xs-6 > h2:before, body.advsearch > div.container-fluid > div > div.col-sm-10:before, body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container1:before, body.catlist > div.container-fluid > div > div.col-sm-10 > div.container1:before, body.langlist > div.container-fluid > div > div.col-sm-10 > div.container1:before, body.downloadlist > div.container-fluid > div > div.col-sm-10 > div.container1:before, body.login .navbar > .container-fluid > .navbar-header > button.navbar-toggle, body.serieslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
+    .shelforder > .container-fluid > .row-fluid > .col-sm-10 > div.col-sm-6.col-lg-6.col-xs-6 > h2:before, body.advsearch > div.container-fluid > div > div.col-sm-10:before, body.authorlist > div.container-fluid > div > div.col-sm-10 > div.container:before, body.catlist > div.container-fluid > div > div.col-sm-10 > div.container:before, body.langlist > div.container-fluid > div > div.col-sm-10 > div.container:before, body.login .navbar > .container-fluid > .navbar-header > button.navbar-toggle, body.serieslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
         display: none
     }
 
@@ -6545,9 +6462,11 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
         height: 150px;
         margin-bottom: 0
     }
+
     .container-fluid .book .cover img {
-    width: 100px !important;
+        width: 100px !important;
     }
+
     #books .cover img, #books_rand .cover img, .book.isotope-item .cover img {
         width: 100px !important
     }
@@ -6569,7 +6488,7 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
         background-size: 30px
     }
 
-    body.advanced_search > div.container-fluid > div > div.col-sm-10 > div.col-sm-8:before, body.author:not(.authorlist) .undefined-img:before, body.authorlist > div.container-fluid > div.row-fluid > div.col-sm-10:before, body.catlist > div.container-fluid > div.row-fluid > div.col-sm-10:before, body.downloadlist > div.container-fluid > div.row-fluid > div.col-sm-10:before, body.langlist > div.container-fluid > div > div.col-sm-10:before, body.ratingslist > div.container-fluid > div > div.col-sm-10:before, body.serieslist > div.container-fluid > div > div.col-sm-10:before, body.shelforder > div.container-fluid > div.row-fluid > div.col-sm-10:before {
+    body.advanced_search > div.container-fluid > div > div.col-sm-10 > div.col-sm-8:before, body.author:not(.authorlist) .undefined-img:before, body.authorlist > div.container-fluid > div.row-fluid > div.col-sm-10:before, body.catlist > div.container-fluid > div.row-fluid > div.col-sm-10:before, body.langlist > div.container-fluid > div > div.col-sm-10:before, body.ratingslist > div.container-fluid > div > div.col-sm-10:before, body.serieslist > div.container-fluid > div > div.col-sm-10:before, body.shelforder > div.container-fluid > div.row-fluid > div.col-sm-10:before {
         position: fixed;
         top: 62px;
         right: 23px;
@@ -6589,7 +6508,7 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
         border-top: 1px solid hsla(0, 0%, 78%, .15)
     }
 
-    body > div.container-fluid > div > div.col-sm-10 > div.container1 {
+    body > div.container-fluid > div > div.col-sm-10 > div.container {
         left: 0;
         width: auto;
         margin: 0 !important;
@@ -6674,20 +6593,6 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
         max-width: 100% !important
     }
 
-    .author > .container-fluid > .row-fluid > .col-sm-10 > h2:after {
-        content: "\e008";
-        font-family: 'Glyphicons Halflings', serif;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1;
-        font-size: 6vw;
-        position: fixed;
-        left: 240px;
-        top: 180px;
-        width: calc(20% - 55px);
-        text-align: center
-    }
-
     .shelforder > .container-fluid > .row-fluid > .col-sm-10 > div.col-sm-6.col-lg-6.col-xs-6 > h2 {
         height: 42px;
         width: calc(100%);
@@ -6716,7 +6621,7 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
         margin-bottom: 5px
     }
 
-    body > div.container-fluid > div > div.col-sm-10 > div.container1 > div > .row {
+    body > div.container-fluid > div > div.col-sm-10 > div.container > div > .row {
         padding: 0
     }
 
@@ -7010,10 +6915,7 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
         margin: 45px
     }
 
-    .book-meta > .bookinfo > .languages > span:first-of-type,
-    .book-meta > .bookinfo > .publishers > span:first-of-type,
-    .book-meta > .bookinfo > .publishing-date > span:first-of-type,
-    .real_custom_columns > span:first-of-type {
+    .book-meta > .bookinfo > .languages > span:first-of-type, .book-meta > .bookinfo > .publishers > span:first-of-type, .book-meta > .bookinfo > .publishing-date > span:first-of-type, .real_custom_columns > span:first-of-type {
         width: 50%;
         max-width: 200px;
     }
@@ -7076,53 +6978,6 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
         margin: 9px 6px
     }
 
-    body.author:not(.authorlist) .blur-wrapper:before, body.author > .container-fluid > .row-fluid > .col-sm-10 > h2:after {
-        content: "\e008";
-        font-family: 'Glyphicons Halflings', serif;
-        font-weight: 400;
-        z-index: 9;
-        line-height: 1;
-        text-align: center
-    }
-
-    body.author:not(.authorlist) > div.container-fluid > div > div.col-sm-10 {
-        width: 100%;
-        left: 0;
-        padding: 10px
-    }
-
-    .author > .container-fluid > .row-fluid > .col-sm-10 > h2 {
-        float: right;
-        width: 100%;
-        margin: 0;
-        border-bottom: 1px solid hsla(0, 0%, 78%, .15);
-        padding: 20px 0 0 135px;
-        min-height: 140px;
-        overflow: hidden;
-        -o-text-overflow: ellipsis;
-        text-overflow: ellipsis
-    }
-
-    .author > .container-fluid > .row-fluid > .col-sm-10 > .author-bio > img {
-        position: absolute;
-        left: 25px;
-        top: 25px;
-        width: 100px;
-        height: 100px;
-        z-index: 9;
-        border-radius: 50%
-    }
-
-    body.author > .container-fluid > .row-fluid > .col-sm-10 > h2:after {
-        font-style: normal;
-        font-size: 8vw;
-        position: absolute;
-        left: 25px;
-        top: 26px;
-        width: 100px;
-        height: 100px
-    }
-
     body.author:not(.authorlist) .blur-wrapper {
         display: block;
         background: var(--color-background-mobile)
@@ -7149,10 +7004,6 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
 
     .author > .container-fluid > .row-fluid > .col-sm-10 > h2 + .discover > .row {
         padding-top: 30px
-    }
-
-    body.author > div.container-fluid > div > div.col-sm-10 > div.discover {
-        padding: 0 !important
     }
 
     .author > .container-fluid > .row-fluid > .col-sm-10 > .author-bio {
@@ -7195,17 +7046,22 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
     }
 
     body.editbook > div.container-fluid > div.row-fluid > div.col-sm-10 > div.col-sm-3, body.upload > div.container-fluid > div.row-fluid > div.col-sm-10 > div.col-sm-3 {
-        position: relative;
-        max-width: unset;
-        width: 100%;
-        height: unset;
+        max-width: 130px;
+        width: 130px;
+        height: 180px;
+        margin: 0;
         padding: 15px;
+        position: absolute
     }
 
     body.editbook > div.container-fluid > div.row-fluid > div.col-sm-10 > form > div.col-sm-9, body.upload > div.container-fluid > div.row-fluid > div.col-sm-10 > form > div.col-sm-9 {
         padding: 15px;
         margin: 0 !important;
         width: 100%
+    }
+
+    body.editbook > div.container-fluid > div.row-fluid > div.col-sm-10 > form > div.col-sm-9 > .form-group:nth-child(1), body.editbook > div.container-fluid > div.row-fluid > div.col-sm-10 > form > div.col-sm-9 > .form-group:nth-child(2), body.upload > div.container-fluid > div.row-fluid > div.col-sm-10 > form > div.col-sm-9 > .form-group:nth-child(1), body.upload > div.container-fluid > div.row-fluid > div.col-sm-10 > form > div.col-sm-9 > .form-group:nth-child(2) {
+        padding-left: 120px
     }
 
     #deleteButton, body.editbook > div.container-fluid > div.row-fluid > div.col-sm-10 > div.col-sm-3 > div.text-center > #delete, body.upload > div.container-fluid > div.row-fluid > div.col-sm-10 > div.col-sm-3 > div.text-center > #delete {
@@ -7329,8 +7185,8 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
     }
 
     body.blur #main-nav + #scnd-nav .create-shelf, body.blur #main-nav + .col-sm-2 #scnd-nav .create-shelf {
-      float: none;
-      margin: 5px 0 10px -10px;
+        float: none;
+        margin: 5px 0 10px -10px;
     }
 
     #main-nav + #scnd-nav .nav-head.hidden-xs {
@@ -7483,11 +7339,11 @@ body.edituser.admin > div.container-fluid > div.row-fluid > div.col-sm-10 > div.
         text-decoration: none
     }
 
-    body > div.container-fluid > div > div.col-sm-10 > div.container1 > div > .row:nth-of-type(even) {
+    body > div.container-fluid > div > div.col-sm-10 > div.container > div > .row:nth-of-type(even) {
         background: 0 0
     }
 
-    body > div.container-fluid > div > div.col-sm-10 > div.container1 > div > .row {
+    body > div.container-fluid > div > div.col-sm-10 > div.container > div > .row {
         border-bottom: 1px solid hsla(0, 0%, 78%, .15)
     }
 
@@ -7585,9 +7441,9 @@ body.publisherlist > div.container-fluid > div > div.col-sm-10:before {
 }
 
 @media screen and (max-width: 992px) {
-  body.publisherlist > div.container-fluid > div > div.col-sm-10:before {
-      top: 180px;
-  }
+    body.publisherlist > div.container-fluid > div > div.col-sm-10:before {
+        top: 180px;
+    }
 }
 
 body.ratingslist > div.container-fluid > div > div.col-sm-10:before {
@@ -7601,19 +7457,20 @@ body.ratingslist > div.container-fluid > div > div.col-sm-10:before {
     left: 240px;
     top: 240px;
     width: calc(20% - 55px);
-    text-align: center
+    text-align: center;
+    color: #8b0000
 }
 
 @media screen and (max-width: 992px) {
-  body.ratingslist > div.container-fluid > div > div.col-sm-10:before {
-      top: 180px;
-  }
+    body.ratingslist > div.container-fluid > div > div.col-sm-10:before {
+        top: 180px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-  body.ratingslist > div.container-fluid > div > div.col-sm-10:before {
-      display: none;
-  }
+    body.ratingslist > div.container-fluid > div > div.col-sm-10:before {
+        display: none;
+    }
 }
 
 body.formatslist > div.container-fluid > div > div.col-sm-10:before {
@@ -7631,18 +7488,18 @@ body.formatslist > div.container-fluid > div > div.col-sm-10:before {
 }
 
 @media screen and (max-width: 992px) {
-  body.formatslist > div.container-fluid > div > div.col-sm-10:before {
-      top: 180px;
-  }
+    body.formatslist > div.container-fluid > div > div.col-sm-10:before {
+        top: 180px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-  body.formatslist > div.container-fluid > div > div.col-sm-10:before {
-      display: none;
-  }
+    body.formatslist > div.container-fluid > div > div.col-sm-10:before {
+        display: none;
+    }
 }
 
-body.publisherlist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
+body.publisherlist > div.container-fluid > div > div.col-sm-10 > div.container:before {
     content: "Publishers";
     top: 115px;
     font-size: 24px;
@@ -7650,43 +7507,41 @@ body.publisherlist > div.container-fluid > div > div.col-sm-10 > div.container1:
     line-height: 1;
     padding-left: 15px;
     position: absolute;
-    display: table;
     font-family: Open Sans Bold, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: 400
 }
 
 @media screen and (max-width: 992px) {
-  body.publisherlist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      top: 60px;
-  }
+    body.publisherlist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+        top: 60px;
+    }
 }
 
-body.ratingslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-    content: "Ratings";
+body.ratingslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+    content: "Hodnocení";
     top: 115px;
     font-size: 24px;
     color: #eee;
     line-height: 1;
     padding-left: 15px;
     position: absolute;
-    display: table;
     font-family: Open Sans Bold, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: 400
 }
 
 @media screen and (max-width: 992px) {
-  body.ratingslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      top: 60px;
-  }
+    body.ratingslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+        top: 60px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-  body.ratingslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      display: none;
-  }
+    body.ratingslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+        display: none;
+    }
 }
 
-body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
+body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
     content: "File formats";
     top: 115px;
     font-size: 24px;
@@ -7699,18 +7554,18 @@ body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container1:be
 }
 
 @media screen and (max-width: 992px) {
-  body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      top: 60px;
-  }
+    body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+        top: 60px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-  body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
-      display: none;
-  }
+    body.formatslist > div.container-fluid > div > div.col-sm-10 > div.container:before {
+        display: none;
+    }
 }
 
-body.publisherlist > div.container-fluid > div > div.col-sm-10 > div.container1 > div.col-sm-6 {
+body.publisherlist > div.container-fluid > div > div.col-sm-10 > div.container > div.col-sm-6 {
     width: 100%
 }
 
@@ -7749,7 +7604,7 @@ body.publisherlist > div.container-fluid > div > div.col-sm-10 > div.container1 
         color: hsla(0, 0%, 100%, .7)
     }
 
-    body.publisherlist > div.container-fluid > div > div.col-sm-10 > div.container1:before {
+    body.publisherlist > div.container-fluid > div > div.col-sm-10 > div.container:before {
         display: none !important
     }
 }
@@ -7963,10 +7818,10 @@ body.mailset > div.container-fluid > div > div.col-sm-10 > div.discover .glyphic
 }
 
 #sendbtn2 > span, #read-in-browser > span {
-    color: hsla(0, 0%, 100%, .7)
+    color: #8b0000
 }
 
-#sendbtn2 > span.glyphicon-send:before, #read-in-browser > span.glyphicon-book:before  {
+#sendbtn2 > span.glyphicon-send:before, #read-in-browser > span.glyphicon-book:before {
     margin-left: 8px
 }
 
@@ -7979,7 +7834,7 @@ body.mailset > div.container-fluid > div > div.col-sm-10 > div.discover .glyphic
 }
 
 #sendbtn2:focus span, #sendbtn2:hover span, #read-in-browser:focus span, #read-in-browser:hover span {
-    color: #fff
+    color: #eee
 }
 
 #sendbtn2[aria-expanded=true], #read-in-browser[aria-expanded=true] {
