@@ -38,6 +38,8 @@ from sqlalchemy.orm.attributes import flag_modified
 from sqlalchemy.sql.functions import coalesce
 from werkzeug.datastructures import Headers
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime, timedelta, timezone
+from sqlalchemy import or_, select
 
 from . import constants, logger, isoLanguages, services
 from . import db, ub, config, app
@@ -803,14 +805,105 @@ def render_archived_books(page, sort_param):
 
 # ################################### View Books list ##################################################################
 
+from datetime import datetime, timedelta, timezone
+from sqlalchemy import and_, or_
 
-@web.route("/", defaults={'page': 1})
-@web.route('/page/<int:page>')
-@login_required_if_no_ano
+@web.route("/", defaults={"page": 1})
+@web.route("/page/<int:page>")
 def index(page):
-    sort_param = (request.args.get('sort') or 'stored').lower()
-    return render_books_list("newest", sort_param, 1, page)
+    # cutoff pro "posledních 30 dní"
+    cutoff = datetime.now(timezone.utc) - timedelta(days=30)
 
+    # Nepřečtené pro aktuálního usera (None = nikdy neoznačeno jako přečtené)
+    unread_filter = or_(
+        ub.ReadBook.read_status.is_(None),
+        ub.ReadBook.read_status != ub.ReadBook.STATUS_FINISHED
+    )
+
+    # --- 1) Nové + nepřečtené knihy (posledních 30 dní) ---
+    q_new = calibre_db.generate_linked_query(config.config_read_column, db.Books)
+    q_new = (q_new
+             .filter(calibre_db.common_filters(allow_show_archived=False))
+             .filter(db.Books.timestamp >= cutoff)
+             .filter(unread_filter)
+             .order_by(db.Books.timestamp.desc())
+             .limit(40))
+
+    entries_new = q_new.all()
+    entries_new = calibre_db.order_authors(entries_new, list_return=True, combined=True)
+
+    # --- 2) Nepřečtené díly u sérií, kde už mám aspoň 1 přečtenou knihu ---
+    finished_series_sq = (calibre_db.session.query(db.books_series_link.c.series)
+                          .join(ub.ReadBook, ub.ReadBook.book_id == db.books_series_link.c.book)
+                          .filter(ub.ReadBook.user_id == int(current_user.id))
+                          .filter(ub.ReadBook.read_status == ub.ReadBook.STATUS_FINISHED)
+                          .filter(db.books_series_link.c.series.isnot(None))
+                          .distinct()
+                          .subquery())
+
+    q_series = calibre_db.generate_linked_query(config.config_read_column, db.Books)
+    q_series = (q_series
+                .join(db.books_series_link, db.Books.id == db.books_series_link.c.book)
+                .filter(calibre_db.common_filters(allow_show_archived=False))
+                .filter(db.books_series_link.c.series.in_(finished_series_sq))
+                .filter(unread_filter)
+                .order_by(db.Books.timestamp.desc())
+                .limit(40))
+
+    series_entries = q_series.all()
+    series_entries = calibre_db.order_authors(series_entries, list_return=True, combined=True)
+
+    # --- 3) TOP 5 "categories" podle počtu PŘEČTENÝCH knih (aktuální user) ---
+    top_categories_rows = (calibre_db.session.query(
+                                db.Tags.name.label("name"),
+                                func.count(func.distinct(db.Books.id)).label("cnt")
+                           )
+                           .select_from(db.Books)
+                           .join(ub.ReadBook, and_(
+                                ub.ReadBook.book_id == db.Books.id,
+                                ub.ReadBook.user_id == int(current_user.id),
+                                ub.ReadBook.read_status == ub.ReadBook.STATUS_FINISHED
+                           ))
+                           .join(db.books_tags_link, db.Books.id == db.books_tags_link.c.book)
+                           .join(db.Tags, db.books_tags_link.c.tag == db.Tags.id)
+                           .filter(calibre_db.common_filters(allow_show_archived=False))
+                           .group_by(db.Tags.name)
+                           .order_by(func.count(func.distinct(db.Books.id)).desc(), db.Tags.name.asc())
+                           .limit(5)
+                           .all())
+
+    top_categories = [{"name": r.name, "count": int(r.cnt)} for r in top_categories_rows]
+
+    # --- 4) TOP 5 autorů podle počtu PŘEČTENÝCH knih (aktuální user) ---
+    top_authors_rows = (calibre_db.session.query(
+                            db.Authors.name.label("name"),
+                            func.count(func.distinct(db.Books.id)).label("cnt")
+                        )
+                        .select_from(db.Books)
+                        .join(ub.ReadBook, and_(
+                            ub.ReadBook.book_id == db.Books.id,
+                            ub.ReadBook.user_id == int(current_user.id),
+                            ub.ReadBook.read_status == ub.ReadBook.STATUS_FINISHED
+                        ))
+                        .join(db.books_authors_link, db.Books.id == db.books_authors_link.c.book)
+                        .join(db.Authors, db.books_authors_link.c.author == db.Authors.id)
+                        .filter(calibre_db.common_filters(allow_show_archived=False))
+                        .group_by(db.Authors.name)
+                        .order_by(func.count(func.distinct(db.Books.id)).desc(), db.Authors.name.asc())
+                        .limit(5)
+                        .all())
+
+    top_authors = [{"name": r.name, "count": int(r.cnt)} for r in top_authors_rows]
+
+    return render_title_template(
+        "home_custom.html",
+        title=_("Home"),
+        entries_new=entries_new,
+        series_entries=series_entries,
+        top_categories=top_categories,
+        top_authors=top_authors,
+        page="home"
+    )
 
 @login_required_if_no_ano
 def books_list(data, sort_param, book_id, page):

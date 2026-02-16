@@ -273,7 +273,7 @@ body.blur .row-fluid .col-sm-10 {
 }
 
 #scnd-nav > li.active a, .authorlist #nav_author a, .catlist #nav_cat a, .langlist #nav_lang a, .serieslist #nav_serie a {
-    color: var(--color-primary)
+    color: #b22222;
 }
 
 #scnd-nav > li.active:hover a, .authorlist #nav_author:hover a, .catlist #nav_cat:hover a, .langlist #nav_lang:hover a, .serieslist #nav_serie:hover a {
@@ -681,7 +681,7 @@ div[aria-label="Edit/Delete book"] > .btn > span:hover {
 }
 
 a {
-    color: #eee
+    color: #eee;
 }
 
 a:hover {
@@ -704,7 +704,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-header > a
     width: 240px;
     height: 60px;
     text-align: left;
-    color: var(--color-primary) !important;
+    color: #b22222 !important;
     font-size: 15px;
     font-family: Open Sans Bold, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-stretch: normal;
@@ -772,7 +772,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-header > a
 }
 
 .home-btn > a {
-    color: #8b0000;
+    color: #b22222;
     font-family: plex-icons-new, serif;
     line-height: 60px;
     position: relative;
@@ -830,7 +830,7 @@ body:not(.read-frame) {
     -o-background-size: auto, cover !important;
     line-height: 1.71428571;
     background: url(images/caliblur/blur-noise.png), var(--color-background);
-    color: #8b0000;
+    color: #eee;
     font-family: Open Sans Semibold, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: 400;
     overflow: hidden;
@@ -1191,7 +1191,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-collapse.c
 body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-collapse.collapse > ul > li > a {
     height: 60px;
     padding: 20px 10px;
-    color: #8b0000
+    color: #b22222
 }
 
 body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-collapse.collapse > ul > li > #top_admin > .glyphicon-dashboard::before {
@@ -1265,7 +1265,7 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
     display: inline-block;
     padding: 6px 16px;
     font-family: Open Sans Bold, Helvetica Neue, Helvetica, Arial, sans-serif;
-    border: 0;
+    border: 0px;
     margin-bottom: 0;
     line-height: 1.71428571;
     text-align: center;
@@ -1280,13 +1280,14 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 }
 
 .btn-primary {
-    color: #eee;
+    color: #ffffff;
     background-color: #b22222;
-    border-color: hsla(0, 0%, 100%, .25)
+    border-color: #8b0000;
 }
 
 .btn-primary:hover {
-    border-color: hsla(0, 0%, 100%, .3)
+    border-color: #b22222;
+    background-color: #8b0000;
 }
 
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .open > .dropdown-toggle.btn-default {
@@ -1315,15 +1316,15 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 
 .navigation .nav-head {
     margin: 0;
-    color: #8b0000;
-    font-size: 15px;
+    color: transparent;
+    font-size: 0px;
     font-family: Open Sans Bold, Helvetica Neue, Helvetica, Arial, sans-serif;
-    line-height: 45px;
+    line-height: 0px;
     padding-left: 25px
 }
 
 .navigation li a {
-    color: hsla(0, 0%, 100%, .7);
+    color: #eeee;
     text-decoration: none;
     padding: 4px 25px;
     font-size: 13px;
@@ -1341,7 +1342,7 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 }
 
 .navigation li:hover {
-    background-color: hsla(0, 0%, 100%, .08)
+    background-color: transparent;
 }
 
 .navigation .create-shelf a, .navigation li.nav-head:hover {
@@ -1350,7 +1351,7 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 
 .navigation li a:hover {
     background: 0 0;
-    color: #fff
+    color: #b22222
 }
 
 #nav_hot .glyphicon-fire::before {
@@ -1390,7 +1391,7 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 
 .navigation .create-shelf a {
     width: 165px;
-    color: hsla(0, 0%, 100%, .7) !important;
+    color: transparent;
     padding: 5px 7px 2px;
     font-size: 12px;
     line-height: 1;
@@ -1409,7 +1410,7 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 }
 
 .navigation .create-shelf a:hover {
-    color: #fff !important;
+    color: transparent;
     background: 0 0 !important;
     border-radius: 0
 }
@@ -1922,7 +1923,7 @@ body:not(.admin) > div.container-fluid > div > div.col-sm-10 > div.discover > h1
     width: calc(100vw - 240px);
     height: 60px;
     padding-left: 25px;
-    color: transparent;
+    color: hsla(0, 0%, 100%, .7);
     font-family: "Open Sans Semibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     line-height: 60px;
@@ -2972,8 +2973,8 @@ body > div.container-fluid > div > div.col-sm-10 > div > div > div.col-sm-3.col-
 }
 
 .book-meta > h2 {
-    font-size: 24px;
-    color: #8b0000;
+    font-size: px;
+    color: #b00000;
     font-weight: 400;
     line-height: 1;
     margin: 0;
@@ -3709,7 +3710,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-header > a
 }
 
 .plexBack > a {
-    color: #8b0000;
+    color: #8B0000;
     font-family: plex-icons-new, serif;
     -webkit-font-variant-ligatures: normal;
     font-variant-ligatures: normal;

@@ -487,7 +487,7 @@ msgstr ""
 
 #: cps/admin.py:1933
 msgid "Database Configuration"
-msgstr ""
+msgstr "Konfigurace databáze"
 
 #: cps/admin.py:1948 cps/web.py:1304
 msgid "Oops! Please complete all fields."
@@ -1006,12 +1006,12 @@ msgstr "Zobrazit žhavé knihy"
 
 #: cps/render_template.py:48 cps/render_template.py:53
 msgid "Downloaded Books"
-msgstr ""
+msgstr "Stažené knihy"
 
 #: cps/render_template.py:50 cps/render_template.py:55
 #: cps/templates/user_table.html:167
 msgid "Show Downloaded Books"
-msgstr ""
+msgstr "Zobrazit stažené knihy"
 
 #: cps/render_template.py:58 cps/templates/index.xml:36 cps/web.py:439
 msgid "Top Rated Books"
@@ -1028,7 +1028,7 @@ msgstr "Přečtené knihy"
 
 #: cps/render_template.py:63
 msgid "Show Read and Unread"
-msgstr ""
+msgstr "Zobrazit přečtené a nepřečtené"
 
 #: cps/render_template.py:65 cps/templates/index.xml:70
 #: cps/templates/index.xml:74 cps/web.py:775
@@ -1051,11 +1051,11 @@ msgstr "Zobrazit náhodné knihy"
 #: cps/render_template.py:71 cps/templates/book_table.html:93
 #: cps/templates/index.xml:97 cps/web.py:1146
 msgid "Categories"
-msgstr "Kategorie"
+msgstr "Štítky"
 
 #: cps/render_template.py:73 cps/templates/user_table.html:158
 msgid "Show Category Section"
-msgstr ""
+msgstr "Zobrazit sekci štítků"
 
 #: cps/render_template.py:74 cps/templates/book_edit.html:86
 #: cps/templates/book_table.html:94 cps/templates/index.xml:106
@@ -1065,7 +1065,7 @@ msgstr "Série"
 
 #: cps/render_template.py:76 cps/templates/user_table.html:157
 msgid "Show Series Section"
-msgstr ""
+msgstr "Zobrazit sekci sérií"
 
 #: cps/render_template.py:77 cps/templates/book_table.html:92
 #: cps/templates/index.xml:79
@@ -1074,7 +1074,7 @@ msgstr "Autoři"
 
 #: cps/render_template.py:79 cps/templates/user_table.html:160
 msgid "Show Author Section"
-msgstr ""
+msgstr "Zobrazit sekci autorů"
 
 #: cps/render_template.py:81 cps/templates/book_table.html:98
 #: cps/templates/index.xml:88 cps/web.py:1004
@@ -1083,7 +1083,7 @@ msgstr "Vydavatelé"
 
 #: cps/render_template.py:83 cps/templates/user_table.html:163
 msgid "Show Publisher Section"
-msgstr ""
+msgstr "Zobrazit sekci vydavatelů"
 
 #: cps/render_template.py:84 cps/templates/book_table.html:96
 #: cps/templates/index.xml:115 cps/templates/search_form.html:108
@@ -1093,7 +1093,7 @@ msgstr "Jazyky"
 
 #: cps/render_template.py:87 cps/templates/user_table.html:155
 msgid "Show Language Section"
-msgstr ""
+msgstr "Zobrazit sekci jazyků"
 
 #: cps/render_template.py:88 cps/templates/index.xml:124
 msgid "Ratings"
@@ -1101,7 +1101,7 @@ msgstr "Hodnocení"
 
 #: cps/render_template.py:90 cps/templates/user_table.html:164
 msgid "Show Ratings Section"
-msgstr ""
+msgstr "Zobrazit sekci hodnocení"
 
 #: cps/render_template.py:91 cps/templates/index.xml:133
 msgid "File formats"
@@ -1109,7 +1109,7 @@ msgstr "Formáty souborů"
 
 #: cps/render_template.py:93 cps/templates/user_table.html:165
 msgid "Show File Formats Section"
-msgstr ""
+msgstr "Zobrazit sekci formátů souborů"
 
 #: cps/render_template.py:95 cps/web.py:798
 msgid "Archived Books"
@@ -1117,15 +1117,15 @@ msgstr "Archivované knihy"
 
 #: cps/render_template.py:97 cps/templates/user_table.html:166
 msgid "Show Archived Books"
-msgstr ""
+msgstr "Zobrazti sekci archvivovaných knih"
 
 #: cps/render_template.py:100 cps/web.py:834
 msgid "Books List"
-msgstr ""
+msgstr "Seznam knih"
 
 #: cps/render_template.py:102 cps/templates/user_table.html:168
 msgid "Show Books List"
-msgstr ""
+msgstr "Zobrazit seznam knih"
 
 #: cps/search.py:214
 msgid "Published after "
@@ -1397,7 +1397,7 @@ msgstr "Soubor formátů: %(format)s"
 #: cps/web.py:704
 #, python-format
 msgid "Category: %(name)s"
-msgstr "Kategorie: %(name)s"
+msgstr "Štítek: %(name)s"
 
 #: cps/web.py:733
 #, python-format
@@ -1918,7 +1918,7 @@ msgstr "Více od"
 #: cps/templates/listenmp3.html:62
 #, python-format
 msgid "Book %(index)s of %(range)s"
-msgstr ""
+msgstr "Kniha %(index)s ze série %(range)s"
 
 #: cps/templates/basic_detail.html:41 cps/templates/book_edit.html:106
 #: cps/templates/detail.html:165 cps/templates/listenmp3.html:69
@@ -1941,7 +1941,7 @@ msgstr "Publikováno"
 #: cps/templates/basic_detail.html:76 cps/templates/detail.html:286
 #: cps/templates/listenmp3.html:177
 msgid "Description:"
-msgstr "Popis:"
+msgstr "Anotace:"
 
 #: cps/templates/basic_index.html:7 cps/templates/layout.html:173
 msgid "Previous"

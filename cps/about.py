@@ -33,7 +33,6 @@ from . import db, calibre_db, converter, uploader, constants, dep_check
 from .render_template import render_title_template
 from .usermanagement import user_login_required
 
-
 about = flask.Blueprint('about', __name__)
 
 modules = dict()
@@ -81,5 +80,14 @@ def stats():
     authors = calibre_db.session.query(db.Authors).count()
     categories = calibre_db.session.query(db.Tags).count()
     series = calibre_db.session.query(db.Series).count()
-    return render_title_template('stats.html', bookcounter=counter, authorcounter=authors, versions=collect_stats(),
-                                 categorycounter=categories, seriecounter=series, title=_("Statistics"), page="stat")
+
+    return render_title_template(
+        'stats.html',
+        bookcounter=counter,
+        authorcounter=authors,
+        versions=collect_stats(),
+        categorycounter=categories,
+        seriecounter=series,
+        title=_("Statistics"),
+        page="stat"
+    )

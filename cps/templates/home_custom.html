@@ -1,0 +1,231 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<style>
+  /* nechceme horizontální scrollbar celé stránky */
+  html, body { overflow-x: hidden; }
+
+  .home-wrap { padding-top: 10px; }
+
+/* nadpisy a texty na home na střed */
+.home-wrap h2,
+.home-wrap h4,
+.home-wrap .home-note,
+.home-wrap > p { 
+  text-align: center; 
+}
+
+/* ale text uvnitř book karet (title/author/series) má být doleva */
+.home-wrap .carousel .meta,
+.home-wrap .carousel .meta p,
+.home-wrap .carousel .meta a {
+  text-align: left;
+}
+
+
+  /* CAROUSEL blok vycentrovaný na stránce */
+  .carousel {
+    position: relative;
+    margin: 0 auto 22px auto;
+    max-width: 1280px; /* klidně uprav */
+  }
+
+  /* aby šipky měly místo a nebyly "na hraně" */
+  .carousel-viewport { padding: 0 45px; }
+
+  .carousel-viewport > div {
+    /* scroll-container z partialu */
+    scrollbar-width: none;          /* Firefox */
+    -ms-overflow-style: none;       /* IE/Edge */
+  }
+  .carousel-viewport > div::-webkit-scrollbar {
+    display: none;                  /* Chrome/Safari */
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 20;
+
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    line-height: 1;
+    opacity: 0.92;
+
+    background: #fff;
+    color: #8b0000;
+  }
+  .carousel-btn:hover {
+    opacity: 1;
+    background: #8b0000;
+    color: #fff;
+  }
+
+  .carousel-btn.left  { left: 6px; }
+  .carousel-btn.right { right: 6px; }
+
+  /* Centrovat jen bloky pásů, ne text uvnitř karet */
+  .carousel {
+    max-width: 1400px;   /* klidně si dej 1200/1600 podle chuti */
+    margin: 0 auto 22px;
+  }
+
+  /* Kdyby se ti text v kartách furt centroval nějakým dědictvím */
+  .carousel-viewport {
+    text-align: left;
+  }
+
+  /* ===== FIX: overlay musí sedět přesně na obálku (jen v carouselu) =====
+     Proč: pseudo-elementy (:before/:after) se řídí rozměrem <a>.
+     U některých obálek se img vykreslí o pár px jinak → img "přeroste" <a>.
+     Řešení: <a> shrink-wrap na obsah + img jako block (bez baseline gapů). */
+  .carousel .book .cover { 
+    text-align: center;            /* ať inline-block a není nalepený vlevo */
+  }
+
+  .carousel .book .cover > a {
+    display: inline-block;         /* <a> obepne obrázek přesně */
+    position: relative;            /* kotva pro :before/:after */
+  }
+
+  .carousel .book .cover > a > .img {
+    display: block;
+    line-height: 0;                /* žádné “pár px navíc” od řádkování */
+  }
+
+  .carousel .book .cover > a > .img img {
+    display: block;                /* odstraní inline baseline chování */
+  }
+
+  /* vrstvení overlaye nad obálkou (jen v carouselu) */
+  .carousel .book .cover > a:after { z-index: 1; }
+  .carousel .book .cover > a:before { z-index: 2; }
+
+/* === HOME carousel: sjednocení obálky a hover overlay (bez změny vzhledu webu) ===
+   Problém: overlay (:after na .cover > a) má velikost podle <a>,
+   ale některé <img> o pár px přetékají -> overlay je menší.
+   Řešení: udělat z <a> pevný "obal" a přetečení uříznout. */
+.home-wrap .carousel .cover {
+  overflow: hidden; /* ořízne přetékající obálky */
+}
+
+.home-wrap .carousel .cover > a {
+  display: block;        /* ať má <a> rozměr jako blok */
+  position: relative;    /* pseudo-elementy :before/:after se chytí správně */
+  line-height: 0;        /* zabije mikro-mezeru pod obrázkem (baseline gap) */
+}
+
+.home-wrap .carousel .cover > a > span.img,
+.home-wrap .carousel .cover > a img {
+  display: block;        /* žádné inline chování -> žádné px posuny */
+}
+
+/* HOME: kolečko s ikonkou při hoveru – vycentrovat na 100 % */
+.home-wrap #books > .cover > a:before,
+.home-wrap #books_rand > .cover > a:before,
+.home-wrap .book.isotope-item > .cover > a:before {
+  padding-left: 0 !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+</style>
+{% endblock %}
+
+
+{% block body %}
+<div class="container-fluid home-wrap">
+  <h2>Ahoj! Co dnes budeme číst?</h2>
+  <h4>Co je nového za posledních 30 dní?</h4>
+
+  <div class="carousel" id="carousel-new">
+    <button class="carousel-btn left" type="button" data-target="carousel-new" data-dir="-1" aria-label="Předchozí">&lsaquo;</button>
+
+    <div class="carousel-viewport">
+      {% with entries=entries_new, horizontal=true %}
+        {% include "partials/book_cards.html" %}
+      {% endwith %}
+    </div>
+
+    <button class="carousel-btn right" type="button" data-target="carousel-new" data-dir="1" aria-label="Další">&rsaquo;</button>
+  </div>
+
+  <h4>Pokračuj v rozečtených sériích</h4>
+{% if series_entries and series_entries|length > 0 %}
+  <div class="carousel" id="carousel-series">
+    <button class="carousel-btn left" type="button" data-target="carousel-series" data-dir="-1" aria-label="Předchozí">&lsaquo;</button>
+
+    <div class="carousel-viewport">
+      {% with entries=series_entries, horizontal=true %}
+        {% include "partials/book_cards.html" %}
+      {% endwith %}
+    </div>
+
+    <button class="carousel-btn right" type="button" data-target="carousel-series" data-dir="1" aria-label="Další">&rsaquo;</button>
+  </div>
+{% else %}
+  <p class="home-note"><em>Momentálně nejsou žádné nové knihy v rozečtených sériích.</em></p>
+{% endif %}
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+  (function () {
+    function getStepPx(track) {
+      if (!track || track.children.length === 0) return 200;
+      if (track.children.length >= 2) {
+        return track.children[1].offsetLeft - track.children[0].offsetLeft;
+      }
+      return track.children[0].getBoundingClientRect().width + 12;
+    }
+
+    function scrollTrack(track, dir) {
+      const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+      const threshold = 8;
+
+      const atStart = track.scrollLeft <= threshold;
+      const atEnd = (track.scrollLeft + track.clientWidth) >= (track.scrollWidth - threshold);
+
+      if (dir > 0 && atEnd) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+        return;
+      }
+      if (dir < 0 && atStart) {
+        track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+        return;
+      }
+
+      const step = getStepPx(track);
+      track.scrollBy({ left: dir * step, behavior: 'smooth' });
+    }
+
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest('.carousel-btn');
+      if (!btn) return;
+
+      const carousel = btn.closest('.carousel');
+      if (!carousel) return;
+
+      const track = carousel.querySelector('.carousel-viewport > div');
+      if (!track) return;
+
+      const dir = parseInt(btn.getAttribute('data-dir'), 10) || 1;
+      scrollTrack(track, dir);
+    });
+  })();
+</script>
+{% endblock %}

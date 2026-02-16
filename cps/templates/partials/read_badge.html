@@ -1,0 +1,5 @@
+{# ✅ "Dočteno" badge: entry[2] někdy bývá True/False, jindy 1/0 #}
+{% set is_finished = (entry[2] == 1) or (entry[2] is sameas true) %}
+{% if is_finished %}
+  <span class="badge read glyphicon glyphicon-ok"></span>
+{% endif %}

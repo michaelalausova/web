@@ -1,0 +1,115 @@
+{% set horizontal = horizontal|default(false) %}
+
+{% if horizontal %}
+  <div style="display:flex; gap:12px; overflow-x:auto; padding-bottom:10px; flex-wrap:nowrap; align-items:flex-start;">
+    {% if entries and entries[0] %}
+      {% for entry in entries %}
+        <div class="col-sm-3 col-lg-2 col-xs-6 book session" id="books" style="flex:0 0 auto; float:none;">
+          <div class="cover">
+            <a href="{{ url_for('web.show_book', book_id=entry.Books.id) }}" {% if simple==false %}data-toggle="modal" data-target="#bookDetailsModal" data-remote="false"{% endif %}>
+              <span class="img" title="{{ entry.Books.title }}">
+                {{ image.book_cover(entry.Books) }}
+                {% set is_finished = (entry[2] == 1) or (entry[2] is sameas true) %}
+                {% if is_finished %}<span class="badge read glyphicon glyphicon-ok"></span>{% endif %}
+              </span>
+            </a>
+          </div>
+
+          <div class="meta">
+            <a href="{{ url_for('web.show_book', book_id=entry.Books.id) }}" {% if simple==false %}data-toggle="modal" data-target="#bookDetailsModal" data-remote="false"{% endif %}>
+              <p title="{{ entry.Books.title }}" class="title">{{ entry.Books.title|shortentitle }}</p>
+            </a>
+
+            <p class="author">
+              {% for author in entry.Books.authors %}
+                {% if loop.index > g.config_authors_max and g.config_authors_max != 0 %}
+                  {% if not loop.first %}
+                    <span class="author-hidden-divider">&amp;</span>
+                  {% endif %}
+                  <a class="author-name author-hidden" href="{{ url_for('web.books_list', data='author', book_id=author.id, sort_param='stored') }}">
+                    {{ author.name.replace('|',',')|shortentitle(30) }}
+                  </a>
+                  {% if loop.last %}
+                    <a href="#" class="author-expand" data-authors-max="{{ g.config_authors_max }}" data-collapse-caption="({{ _('reduce') }})">(...)</a>
+                  {% endif %}
+                {% else %}
+                  {% if not loop.first %}
+                    <span>&amp;</span>
+                  {% endif %}
+                  <a class="author-name" href="{{ url_for('web.books_list', data='author', book_id=author.id, sort_param='stored') }}">
+                    {{ author.name.replace('|',',')|shortentitle(30) }}
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </p>
+
+            {% if entry.Books.series.__len__() > 0 %}
+              <p class="series">
+                <a href="{{ url_for('web.books_list', data='series', sort_param='stored', book_id=entry.Books.series[0].id) }}">
+                  {{ entry.Books.series[0].name }}
+                </a>
+                ({{ entry.Books.series_index|formatfloat(2) }})
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% else %}
+  <div class="row display-flex">
+    {% if entries and entries[0] %}
+      {% for entry in entries %}
+        <div class="col-sm-3 col-lg-2 col-xs-6 book session" id="books">
+          <div class="cover">
+            <a href="{{ url_for('web.show_book', book_id=entry.Books.id) }}" {% if simple==false %}data-toggle="modal" data-target="#bookDetailsModal" data-remote="false"{% endif %}>
+              <span class="img" title="{{ entry.Books.title }}">
+                {{ image.book_cover(entry.Books) }}
+                {% set is_finished = (entry[2] == 1) or (entry[2] is sameas true) %}
+                {% if is_finished %}<span class="badge read glyphicon glyphicon-ok"></span>{% endif %}
+              </span>
+            </a>
+          </div>
+
+          <div class="meta">
+            <a href="{{ url_for('web.show_book', book_id=entry.Books.id) }}" {% if simple==false %}data-toggle="modal" data-target="#bookDetailsModal" data-remote="false"{% endif %}>
+              <p title="{{ entry.Books.title }}" class="title">{{ entry.Books.title|shortentitle }}</p>
+            </a>
+
+            <p class="author">
+              {% for author in entry.Books.authors %}
+                {% if loop.index > g.config_authors_max and g.config_authors_max != 0 %}
+                  {% if not loop.first %}
+                    <span class="author-hidden-divider">&amp;</span>
+                  {% endif %}
+                  <a class="author-name author-hidden" href="{{ url_for('web.books_list', data='author', book_id=author.id, sort_param='stored') }}">
+                    {{ author.name.replace('|',',')|shortentitle(30) }}
+                  </a>
+                  {% if loop.last %}
+                    <a href="#" class="author-expand" data-authors-max="{{ g.config_authors_max }}" data-collapse-caption="({{ _('reduce') }})">(...)</a>
+                  {% endif %}
+                {% else %}
+                  {% if not loop.first %}
+                    <span>&amp;</span>
+                  {% endif %}
+                  <a class="author-name" href="{{ url_for('web.books_list', data='author', book_id=author.id, sort_param='stored') }}">
+                    {{ author.name.replace('|',',')|shortentitle(30) }}
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </p>
+
+            {% if entry.Books.series.__len__() > 0 %}
+              <p class="series">
+                <a href="{{ url_for('web.books_list', data='series', sort_param='stored', book_id=entry.Books.series[0].id) }}">
+                  {{ entry.Books.series[0].name }}
+                </a>
+                ({{ entry.Books.series_index|formatfloat(2) }})
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endif %}

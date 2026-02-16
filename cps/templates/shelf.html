@@ -39,7 +39,8 @@
             <a href="{{ url_for('web.show_book', book_id=entry.Books.id) }}" {% if simple==false %}data-toggle="modal" data-target="#bookDetailsModal" data-remote="false"{% endif %}>
               <span class="img" title="{{entry.Books.title}}" >
                 {{ image.book_cover(entry.Books) }}
-                {% if entry[2] == True %}<span class="badge read glyphicon glyphicon-ok"></span>{% endif %}
+                {% set is_finished = (entry[2] == 1) or (entry[2] is sameas true) %}
+                {% if is_finished %}<span class="badge read glyphicon glyphicon-ok"></span>{% endif %}
               </span>
             </a>
       </div>
