@@ -2,148 +2,127 @@
 
 {% block header %}
 <style>
-  /* nechceme horizontální scrollbar celé stránky */
+  /* 1. ZÁKLADNÍ NASTAVENÍ STRÁNKY */
   html, body { overflow-x: hidden; }
-
   .home-wrap { padding-top: 10px; }
 
-/* nadpisy a texty na home na střed */
-.home-wrap h2,
-.home-wrap h4,
-.home-wrap .home-note,
-.home-wrap > p { 
-  text-align: center; 
-}
+  /* Texty na středu, ale uvnitř karet doleva */
+  .home-wrap h2, .home-wrap h4, .home-wrap .home-note, .home-wrap > p { text-align: center; }
+  .home-wrap .carousel .meta, .home-wrap .carousel .meta p, .home-wrap .carousel .meta a { text-align: left; }
 
-/* ale text uvnitř book karet (title/author/series) má být doleva */
-.home-wrap .carousel .meta,
-.home-wrap .carousel .meta p,
-.home-wrap .carousel .meta a {
-  text-align: left;
-}
-
-
-  /* CAROUSEL blok vycentrovaný na stránce */
+  /* 2. CAROUSEL KONTEJNER (Fixace šířky a šipek) */
   .carousel {
     position: relative;
     margin: 0 auto 22px auto;
-    max-width: 1280px; /* klidně uprav */
+    max-width: 1280px; /* Drží šipky na správném místě */
+    overflow: visible; 
   }
 
-  /* aby šipky měly místo a nebyly "na hraně" */
-  .carousel-viewport { padding: 0 45px; }
-
-  .carousel-viewport > div {
-    /* scroll-container z partialu */
-    scrollbar-width: none;          /* Firefox */
-    -ms-overflow-style: none;       /* IE/Edge */
-  }
-  .carousel-viewport > div::-webkit-scrollbar {
-    display: none;                  /* Chrome/Safari */
+  /* Prostor pro šipky */
+  .carousel-viewport { 
+    padding: 0 45px; 
+    overflow: hidden; 
+    text-align: left;
   }
 
+  /* 3. VNITŘNÍ PÁS S KNIHAMI (Centrování a Scroll) */
+  .inner-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    
+    /* Centruje pokud je málo knih, ale 'safe' povolí scroll pokud je jich moc */
+    justify-content: safe center;
+
+    /* Skrytí scrollbaru */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .inner-track::-webkit-scrollbar { display: none; }
+
+  /* Trik pro udržení mezer na konci pásu */
+  .inner-track:after {
+    content: "";
+    flex: 0 0 1px;
+  }
+
+  /* 4. ŠIPKY (Tlačítka) */
   .carousel-btn {
     position: absolute;
     top: 40%;
     transform: translateY(-50%);
     z-index: 20;
-
     border: none;
     width: 38px;
     height: 38px;
     border-radius: 999px;
     cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 22px;
-    line-height: 1;
-    opacity: 0.92;
-
     background: #fff;
     color: #8b0000;
+    opacity: 0.92;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
   .carousel-btn:hover {
     opacity: 1;
     background: #8b0000;
     color: #fff;
   }
-
   .carousel-btn.left  { left: 6px; }
   .carousel-btn.right { right: 6px; }
 
-  /* Centrovat jen bloky pásů, ne text uvnitř karet */
-  .carousel {
-    max-width: 1400px;   /* klidně si dej 1200/1600 podle chuti */
-    margin: 0 auto 22px;
-  }
-
-  /* Kdyby se ti text v kartách furt centroval nějakým dědictvím */
-  .carousel-viewport {
-    text-align: left;
-  }
-
-  /* ===== FIX: overlay musí sedět přesně na obálku (jen v carouselu) =====
-     Proč: pseudo-elementy (:before/:after) se řídí rozměrem <a>.
-     U některých obálek se img vykreslí o pár px jinak → img "přeroste" <a>.
-     Řešení: <a> shrink-wrap na obsah + img jako block (bez baseline gapů). */
-  .carousel .book .cover { 
-    text-align: center;            /* ať inline-block a není nalepený vlevo */
-  }
-
-  .carousel .book .cover > a {
-    display: inline-block;         /* <a> obepne obrázek přesně */
-    position: relative;            /* kotva pro :before/:after */
-  }
-
-  .carousel .book .cover > a > .img {
+  /* 5. VZHLED OBÁLEK (Sjednocení rozměrů) */
+  .carousel .book .cover {
     display: block;
-    line-height: 0;                /* žádné “pár px navíc” od řádkování */
+    width: 100%;
+    min-height: 200px;
+    text-align: center;
+    overflow: hidden;
   }
 
-  .carousel .book .cover > a > .img img {
-    display: block;                /* odstraní inline baseline chování */
+  /* <a> tag a overlaye */
+  .carousel .book .cover > a {
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    line-height: 0;
   }
 
-  /* vrstvení overlaye nad obálkou (jen v carouselu) */
-  .carousel .book .cover > a:after { z-index: 1; }
-  .carousel .book .cover > a:before { z-index: 2; }
+  /* Samotný obrázek - jednotná výška 240px */
+  .carousel .book .cover img {
+    max-width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background-color: transparent;
+    display: block;
+  }
 
-/* === HOME carousel: sjednocení obálky a hover overlay (bez změny vzhledu webu) ===
-   Problém: overlay (:after na .cover > a) má velikost podle <a>,
-   ale některé <img> o pár px přetékají -> overlay je menší.
-   Řešení: udělat z <a> pevný "obal" a přetečení uříznout. */
-.home-wrap .carousel .cover {
-  overflow: hidden; /* ořízne přetékající obálky */
-}
+  /* Vycentrování hover ikonky (to kolečko co se objeví na obálce) */
+  .home-wrap #books > .cover > a:before,
+  .home-wrap #books_rand > .cover > a:before,
+  .home-wrap .book.isotope-item > .cover > a:before {
+    padding-left: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
 
-.home-wrap .carousel .cover > a {
-  display: block;        /* ať má <a> rozměr jako blok */
-  position: relative;    /* pseudo-elementy :before/:after se chytí správně */
-  line-height: 0;        /* zabije mikro-mezeru pod obrázkem (baseline gap) */
-}
-
-.home-wrap .carousel .cover > a > span.img,
-.home-wrap .carousel .cover > a img {
-  display: block;        /* žádné inline chování -> žádné px posuny */
-}
-
-/* HOME: kolečko s ikonkou při hoveru – vycentrovat na 100 % */
-.home-wrap #books > .cover > a:before,
-.home-wrap #books_rand > .cover > a:before,
-.home-wrap .book.isotope-item > .cover > a:before {
-  padding-left: 0 !important;
-  line-height: 1 !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-}
-
+  /* 6. MOBILNÍ ÚPRAVY */
+  @media (max-width: 768px) {
+    .carousel-viewport { padding: 0 10px; }
+    .carousel-btn { display: none !important; } /* Na mobilu šipky netřeba, tam se swajpuje prstem */
+    .carousel .book .cover img {
+      height: 180px; /* Menší obálky pro mobily */
+    }
+  }
 </style>
 {% endblock %}
-
 
 {% block body %}
 <div class="container-fluid home-wrap">

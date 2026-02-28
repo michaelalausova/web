@@ -23,7 +23,7 @@ msgstr "Statistika"
 
 #: cps/admin.py:151
 msgid "Server restarted, please reload page."
-msgstr ""
+msgstr "Server restartován, prosím obnovte stránku"
 
 #: cps/admin.py:153
 msgid "Performing Server shutdown, please close window."
@@ -31,7 +31,7 @@ msgstr ""
 
 #: cps/admin.py:161
 msgid "Success! Database Reconnected"
-msgstr ""
+msgstr "Úspěch! Databáze přepojena"
 
 #: cps/admin.py:164
 msgid "Unknown command"
@@ -67,7 +67,7 @@ msgstr ""
 
 #: cps/admin.py:333 cps/templates/admin.html:51
 msgid "Edit Users"
-msgstr ""
+msgstr "Upravit uživatele"
 
 #: cps/admin.py:377 cps/opds.py:559 cps/templates/grid.html:14
 #: cps/templates/list.html:13
@@ -81,7 +81,7 @@ msgstr "Uživatel nenalezen"
 #: cps/admin.py:414
 #, python-brace-format
 msgid "{} users deleted successfully"
-msgstr ""
+msgstr "{} uživatel úspěšně odstraněn"
 
 #: cps/admin.py:437 cps/templates/config_view_edit.html:133
 #: cps/templates/user_edit.html:45 cps/templates/user_table.html:81
@@ -1622,7 +1622,7 @@ msgstr "E-mail"
 
 #: cps/templates/admin.html:15
 msgid "Send to eReader Email"
-msgstr ""
+msgstr "E-mail čtečky"
 
 #: cps/templates/admin.html:17 cps/templates/layout.html:93
 #: cps/templates/user_table.html:143
@@ -1691,7 +1691,7 @@ msgstr "Z e-mailu"
 
 #: cps/templates/admin.html:90
 msgid "Email Service"
-msgstr ""
+msgstr "E-mailová služba"
 
 #: cps/templates/admin.html:91
 msgid "Gmail via Oauth2"
@@ -1747,7 +1747,7 @@ msgstr "Název záhlaví reverzního proxy"
 
 #: cps/templates/admin.html:159
 msgid "Edit Calibre Database Configuration"
-msgstr ""
+msgstr "Upravit konfiguraci databáze"
 
 #: cps/templates/admin.html:160
 msgid "Edit Basic Configuration"
@@ -1759,45 +1759,45 @@ msgstr "Upravit konfiguraci uživatelského rozhraní"
 
 #: cps/templates/admin.html:167
 msgid "Scheduled Tasks"
-msgstr ""
+msgstr "Plánované úlohy"
 
 #: cps/templates/admin.html:170 cps/templates/schedule_edit.html:12
 #: cps/templates/tasks.html:18
 msgid "Start Time"
-msgstr ""
+msgstr "Čas zahájení"
 
 #: cps/templates/admin.html:174 cps/templates/schedule_edit.html:20
 msgid "Maximum Duration"
-msgstr ""
+msgstr "Maximální trvání"
 
 #: cps/templates/admin.html:178 cps/templates/schedule_edit.html:29
 msgid "Generate Thumbnails"
-msgstr ""
+msgstr "Generovat miniatury"
 
 #: cps/templates/admin.html:182
 msgid "Generate series cover thumbnails"
-msgstr ""
+msgstr "Generování miniatur obálek sérií"
 
 #: cps/templates/admin.html:186 cps/templates/admin.html:208
 #: cps/templates/schedule_edit.html:37
 msgid "Reconnect Calibre Database"
-msgstr ""
+msgstr "Znovu připojit databázi Calibre"
 
 #: cps/templates/admin.html:190 cps/templates/schedule_edit.html:41
 msgid "Generate Metadata Backup Files"
-msgstr ""
+msgstr "Generovat zálohu metadat"
 
 #: cps/templates/admin.html:197
 msgid "Refresh Thumbnail Cache"
-msgstr ""
+msgstr "Obnovit mezipamět miniatur"
 
 #: cps/templates/admin.html:203
 msgid "Administration"
-msgstr "Správa"
+msgstr "Admnistrace"
 
 #: cps/templates/admin.html:204
 msgid "Download Debug Package"
-msgstr ""
+msgstr "Stáhnout debug balíček"
 
 #: cps/templates/admin.html:205
 msgid "View Logs"
@@ -1813,7 +1813,7 @@ msgstr "Vypnout"
 
 #: cps/templates/admin.html:221
 msgid "Version Information"
-msgstr ""
+msgstr "Informace o verzi"
 
 #: cps/templates/admin.html:225
 msgid "Version"
@@ -2053,11 +2053,11 @@ msgstr "Hodnocení"
 #: cps/templates/book_edit.html:114 cps/templates/book_edit.html:282
 #: cps/templates/book_edit.html:297 cps/templates/search_form.html:154
 msgid "Description"
-msgstr "Popis"
+msgstr "Anotace"
 
 #: cps/templates/book_edit.html:118
 msgid "Identifiers"
-msgstr "Identifikátory"
+msgstr "ISBN"
 
 #: cps/templates/book_edit.html:122 cps/templates/book_edit.html:306
 msgid "Identifier Type"
@@ -2116,7 +2116,7 @@ msgstr "Klíčové slovo"
 
 #: cps/templates/book_edit.html:240
 msgid "Search keyword"
-msgstr ""
+msgstr "Hledat klíčové slovo"
 
 #: cps/templates/book_edit.html:246
 msgid "Click the cover to load metadata to the form"
@@ -2142,27 +2142,27 @@ msgstr "Nebyly nalezeny žádné výsledky! Zadejte jiné klíčové slovo."
 #: cps/templates/user_table.html:14 cps/templates/user_table.html:77
 #: cps/templates/user_table.html:100
 msgid "This Field is Required"
-msgstr ""
+msgstr "Povinné pole"
 
 #: cps/templates/book_table.html:25
 msgid "Archive selected books"
-msgstr ""
+msgstr "Archivovat vybrané knihy"
 
 #: cps/templates/book_table.html:28
 msgid "Unarchive selected books"
-msgstr ""
+msgstr "Odebrat vybrané knihy z archivu"
 
 #: cps/templates/book_table.html:34
 msgid "Mark selected books as read"
-msgstr ""
+msgstr "Označit vybrané jako přečtené"
 
 #: cps/templates/book_table.html:37
 msgid "Mark selected books as unread"
-msgstr ""
+msgstr "Označit vybrané jako nepřečtené"
 
 #: cps/templates/book_table.html:57
 msgid "Merge selected books"
-msgstr ""
+msgstr "Sloučit vybrané knihy"
 
 #: cps/templates/book_table.html:60 cps/templates/user_table.html:124
 msgid "Clear selections"
@@ -2170,11 +2170,11 @@ msgstr ""
 
 #: cps/templates/book_table.html:63
 msgid "Edit selected books"
-msgstr ""
+msgstr "Upravit označené knihy"
 
 #: cps/templates/book_table.html:67
 msgid "Exchange author and title"
-msgstr ""
+msgstr "Prohodit autora a název"
 
 #: cps/templates/book_table.html:73
 msgid "Update Title Sort automatically"
@@ -2186,7 +2186,7 @@ msgstr ""
 
 #: cps/templates/book_table.html:89 cps/templates/book_table.html:95
 msgid "Enter Title"
-msgstr ""
+msgstr "Vložte název"
 
 #: cps/templates/book_table.html:89 cps/templates/config_view_edit.html:24
 #: cps/templates/shelf_edit.html:8
@@ -2262,7 +2262,7 @@ msgstr ""
 
 #: cps/templates/book_table.html:128
 msgid "Delete selected books"
-msgstr ""
+msgstr "Smazat vybrané knihy"
 
 #: cps/templates/book_table.html:148 cps/templates/book_table.html:172
 #: cps/templates/book_table.html:192 cps/templates/book_table.html:212
@@ -2281,7 +2281,7 @@ msgstr ""
 
 #: cps/templates/book_table.html:161
 msgid "Merge"
-msgstr ""
+msgstr "Sloučit"
 
 #: cps/templates/book_table.html:176
 msgid "The following books will be deleted:"
@@ -2293,7 +2293,7 @@ msgstr ""
 
 #: cps/templates/book_table.html:200 cps/templates/detail.html:275
 msgid "Archive"
-msgstr ""
+msgstr "Archivovat"
 
 #: cps/templates/book_table.html:216
 msgid "The following books will be unarchived:"
@@ -2301,7 +2301,7 @@ msgstr ""
 
 #: cps/templates/book_table.html:220
 msgid "Unarchive"
-msgstr ""
+msgstr "Odebrat z archivu"
 
 #: cps/templates/book_table.html:236
 msgid "The following books will be marked read:"
@@ -2309,7 +2309,7 @@ msgstr ""
 
 #: cps/templates/book_table.html:240
 msgid "Mark as read"
-msgstr ""
+msgstr "Označit jako přečtené"
 
 #: cps/templates/book_table.html:256
 msgid "The following books will be marked unread:"
@@ -2317,7 +2317,7 @@ msgstr ""
 
 #: cps/templates/book_table.html:260
 msgid "Mark as unread"
-msgstr ""
+msgstr "Označit jako nepřečtené"
 
 #: cps/templates/book_table.html:272 cps/templates/detail.html:348
 msgid "Edit Metadata"
@@ -2357,7 +2357,7 @@ msgstr "Odvolat"
 
 #: cps/templates/config_db.html:80
 msgid "New db location is invalid, please enter valid path"
-msgstr ""
+msgstr "Nová cesta databáze je neplatná, prosím vlož platnou cestu"
 
 #: cps/templates/config_edit.html:18
 msgid "Server Configuration"
@@ -2585,7 +2585,7 @@ msgstr ""
 
 #: cps/templates/config_edit.html:284
 msgid "Custom Filter"
-msgstr ""
+msgstr "Upravit filtry"
 
 #: cps/templates/config_edit.html:289
 msgid "LDAP Member User Filter"
@@ -2628,7 +2628,7 @@ msgstr ""
 
 #: cps/templates/config_edit.html:364
 msgid "Security Settings"
-msgstr ""
+msgstr "Nastavení zabezpečení"
 
 #: cps/templates/config_edit.html:372
 msgid "Limit failed login attempts"
@@ -2652,39 +2652,39 @@ msgstr ""
 
 #: cps/templates/config_edit.html:391
 msgid "Basic"
-msgstr ""
+msgstr "Základní"
 
 #: cps/templates/config_edit.html:392
 msgid "Strong"
-msgstr ""
+msgstr "Silné"
 
 #: cps/templates/config_edit.html:397
 msgid "User Password policy"
-msgstr ""
+msgstr "Požadavky na heslo"
 
 #: cps/templates/config_edit.html:401
 msgid "Minimum password length"
-msgstr ""
+msgstr "Minimální délka hesla"
 
 #: cps/templates/config_edit.html:406
 msgid "Enforce number"
-msgstr ""
+msgstr "Požadovat číslice"
 
 #: cps/templates/config_edit.html:410
 msgid "Enforce lowercase characters"
-msgstr ""
+msgstr "Požadovat malá písmena"
 
 #: cps/templates/config_edit.html:414
 msgid "Enforce uppercase characters"
-msgstr ""
+msgstr "Požadovat velká písmena"
 
 #: cps/templates/config_edit.html:418
 msgid "Enforce characters (needed For Chinese/Japanese/Korean Characters)"
-msgstr ""
+msgstr "Požadovat speciální znaky (požadováno pro čísnké/japonské/korejské znaky)"
 
 #: cps/templates/config_edit.html:422
 msgid "Enforce special characters"
-msgstr ""
+msgstr "Požadovat speciální znaky"
 
 #: cps/templates/config_view_edit.html:17
 msgid "View Configuration"
@@ -2708,7 +2708,7 @@ msgstr "Standartní motiv"
 
 #: cps/templates/config_view_edit.html:43
 msgid "caliBlur! Dark Theme"
-msgstr "caliBlur! Tmavý motiv"
+msgstr "Tmavý motiv"
 
 #: cps/templates/config_view_edit.html:47
 msgid "Regular Expression for Ignoring Columns"
@@ -2732,7 +2732,7 @@ msgstr "Výchozí nastavení pro nového uživatele"
 
 #: cps/templates/config_view_edit.html:88 cps/templates/user_edit.html:96
 msgid "Admin User"
-msgstr "Uživatel admin"
+msgstr "Admin"
 
 #: cps/templates/config_view_edit.html:92 cps/templates/user_edit.html:101
 msgid "Allow Downloads"
@@ -2764,7 +2764,7 @@ msgstr "Povolit úpravy veřejných polic"
 
 #: cps/templates/config_view_edit.html:123
 msgid "Default Language"
-msgstr ""
+msgstr "Výchozí jazyk"
 
 #: cps/templates/config_view_edit.html:131
 msgid "Default Visible Language of Books"
@@ -2805,7 +2805,7 @@ msgstr "Označit jako přečtené"
 
 #: cps/templates/detail.html:262
 msgid "Mark Book as Read or Unread"
-msgstr ""
+msgstr "Označit knihu jako přetenou nebo nepřečtenou"
 
 #: cps/templates/detail.html:262 cps/templates/listenmp3.html:159
 msgid "Read"
@@ -2817,7 +2817,7 @@ msgstr "Obnovit z archivu"
 
 #: cps/templates/detail.html:273 cps/templates/listenmp3.html:166
 msgid "Add to archive"
-msgstr "Archívovat"
+msgstr "Archivovat"
 
 #: cps/templates/detail.html:275
 msgid "Mark Book as archived or not, to hide it in Calibre-Web and delete it from Kobo Reader"
@@ -2833,19 +2833,19 @@ msgstr "Přidat do police"
 #: cps/templates/listenmp3.html:201 cps/templates/listenmp3.html:218
 #: cps/templates/search.html:22 cps/templates/search.html:35
 msgid "(Public)"
-msgstr "(Veřejné)"
+msgstr "Veřejné"
 
 #: cps/templates/email_edit.html:13
 msgid "Email Account Type"
-msgstr ""
+msgstr "Typ e-mailového účtu"
 
 #: cps/templates/email_edit.html:15
 msgid "Standard Email Account"
-msgstr ""
+msgstr "Standartní e-mailový účet"
 
 #: cps/templates/email_edit.html:16
 msgid "Gmail Account"
-msgstr ""
+msgstr "Google účet"
 
 #: cps/templates/email_edit.html:22
 msgid "Setup Gmail Account"
@@ -2873,7 +2873,7 @@ msgstr "Limit velikosti souboru"
 
 #: cps/templates/email_edit.html:66
 msgid "Save and Send Test Email"
-msgstr ""
+msgstr "Uložit a odeslat testující e-mail"
 
 #: cps/templates/email_edit.html:70 cps/templates/layout.html:26
 #: cps/templates/shelf_order.html:42 cps/templates/user_table.html:174
@@ -2911,7 +2911,7 @@ msgstr ""
 
 #: cps/templates/grid.html:21
 msgid "List"
-msgstr ""
+msgstr "Seznam"
 
 #: cps/templates/http_error.html:34
 msgid "Calibre-Web Instance is unconfigured, please contact your administrator"
@@ -2931,7 +2931,7 @@ msgstr "Zpět domů"
 
 #: cps/templates/http_error.html:57
 msgid "Logout User"
-msgstr ""
+msgstr "Odhlásit se"
 
 #: cps/templates/index.html:71
 msgid "Sort ascending according to download count"
@@ -3063,7 +3063,7 @@ msgstr "Podrobnosti o knize"
 
 #: cps/templates/list.html:22
 msgid "Grid"
-msgstr ""
+msgstr "Mřížka"
 
 #: cps/templates/listenmp3.html:167
 msgid "Archived"
@@ -3099,7 +3099,7 @@ msgstr "Zobrazit log přístupu: "
 
 #: cps/templates/logviewer.html:18
 msgid "Download Calibre-Web Log"
-msgstr ""
+msgstr "Stáhnout log databáze"
 
 #: cps/templates/logviewer.html:21
 msgid "Download Access Log"
@@ -3151,15 +3151,15 @@ msgstr ""
 
 #: cps/templates/modal_dialogs.html:81
 msgid "type"
-msgstr ""
+msgstr "typ"
 
 #: cps/templates/modal_dialogs.html:82
 msgid "name"
-msgstr ""
+msgstr "název"
 
 #: cps/templates/modal_dialogs.html:83
 msgid "size"
-msgstr ""
+msgstr "velokost"
 
 #: cps/templates/modal_dialogs.html:89
 msgid "Parent Directory"
@@ -3167,11 +3167,11 @@ msgstr ""
 
 #: cps/templates/modal_dialogs.html:97
 msgid "Select"
-msgstr ""
+msgstr "Vybrat"
 
 #: cps/templates/modal_dialogs.html:133 cps/templates/tasks.html:46
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: cps/templates/osd.xml:5
 msgid "Calibre-Web eBook Catalog"
@@ -3203,7 +3203,7 @@ msgstr ""
 
 #: cps/templates/read.html:97
 msgid "Black"
-msgstr ""
+msgstr "Černý"
 
 #: cps/templates/read.html:109
 msgid "Reflow text when sidebars are open."
@@ -3215,7 +3215,7 @@ msgstr ""
 
 #: cps/templates/read.html:118
 msgid "Font Size"
-msgstr ""
+msgstr "Velikost písma"
 
 #: cps/templates/read.html:126
 msgid "Font"
@@ -3223,7 +3223,7 @@ msgstr ""
 
 #: cps/templates/read.html:127
 msgid "Default"
-msgstr ""
+msgstr "Výchozí"
 
 #: cps/templates/read.html:128
 msgid "Yahei"
@@ -3247,11 +3247,11 @@ msgstr ""
 
 #: cps/templates/read.html:135
 msgid "Two columns"
-msgstr ""
+msgstr "Dva sloupce"
 
 #: cps/templates/read.html:136
 msgid "One column"
-msgstr ""
+msgstr "Jeden sloupec"
 
 #: cps/templates/readcbr.html:8
 msgid "Comic Reader"
@@ -3371,7 +3371,7 @@ msgstr ""
 
 #: cps/templates/readcbr.html:163
 msgid "Remember Position"
-msgstr ""
+msgstr "Zapamatovat pozici"
 
 #: cps/templates/readcbr.html:168
 msgid "Scrollbar"
@@ -3379,11 +3379,11 @@ msgstr ""
 
 #: cps/templates/readcbr.html:171
 msgid "Show"
-msgstr ""
+msgstr "Zobrazit"
 
 #: cps/templates/readcbr.html:172
 msgid "Hide"
-msgstr ""
+msgstr "Skrýt"
 
 #: cps/templates/readdjvu.html:5
 msgid "DJVU Reader"
@@ -3455,7 +3455,7 @@ msgstr ""
 
 #: cps/templates/search_form.html:45 cps/templates/search_form.html:166
 msgid "Empty"
-msgstr ""
+msgstr "Prázdné"
 
 #: cps/templates/search_form.html:60
 msgid "Exclude Tags"
@@ -3492,12 +3492,12 @@ msgstr "Hodnocení méně než"
 #: cps/templates/search_form.html:175 cps/templates/search_form.html:187
 #: cps/templates/search_form.html:201
 msgid "From:"
-msgstr ""
+msgstr "Z:"
 
 #: cps/templates/search_form.html:179 cps/templates/search_form.html:191
 #: cps/templates/search_form.html:211
 msgid "To:"
-msgstr ""
+msgstr "Do:"
 
 #: cps/templates/shelf.html:13
 msgid "Delete this Shelf"
@@ -3505,11 +3505,11 @@ msgstr "Smazat tuto polici"
 
 #: cps/templates/shelf.html:14
 msgid "Edit Shelf Properties"
-msgstr ""
+msgstr "Upravit nastavení police"
 
 #: cps/templates/shelf.html:17
 msgid "Arrange books manually"
-msgstr ""
+msgstr "Seřadit knihy manuálně"
 
 #: cps/templates/shelf.html:18
 msgid "Disable Change order"
@@ -3565,7 +3565,7 @@ msgstr "Sérií v této knihovně"
 
 #: cps/templates/stats.html:29
 msgid "System Statistics"
-msgstr ""
+msgstr "Systémové statistiky"
 
 #: cps/templates/stats.html:33
 msgid "Program"
@@ -3597,11 +3597,11 @@ msgstr "Doba spuštění"
 
 #: cps/templates/tasks.html:19
 msgid "Message"
-msgstr ""
+msgstr "Zpráva"
 
 #: cps/templates/tasks.html:21
 msgid "Actions"
-msgstr ""
+msgstr "Akce"
 
 #: cps/templates/tasks.html:41
 msgid "This task will be cancelled. Any progress made by this task will be saved."
@@ -3617,7 +3617,7 @@ msgstr "Resetovat uživatelské heslo"
 
 #: cps/templates/user_edit.html:28
 msgid "Send to eReader Email Address. Use comma to separate emails for multiple eReaders"
-msgstr ""
+msgstr "E-mailová adresa pro zasílání e-knih do čtečky (použij čárku pro více e-mailových adres)"
 
 #: cps/templates/user_edit.html:43
 msgid "Language of Books"
@@ -3665,19 +3665,19 @@ msgstr "Vygenerovat URL pro Kobo Auth"
 
 #: cps/templates/user_table.html:80 cps/templates/user_table.html:103
 msgid "Select..."
-msgstr ""
+msgstr "Vybrat ..."
 
 #: cps/templates/user_table.html:131
 msgid "Edit User"
-msgstr ""
+msgstr "Upravit uživatele"
 
 #: cps/templates/user_table.html:134
 msgid "Enter Username"
-msgstr ""
+msgstr "Vložit uživatelské jméno"
 
 #: cps/templates/user_table.html:135
 msgid "Enter Email"
-msgstr ""
+msgstr "Vloži e-mail"
 
 #: cps/templates/user_table.html:136
 msgid "Enter eReader Email"
@@ -3693,51 +3693,51 @@ msgstr ""
 
 #: cps/templates/user_table.html:138
 msgid "Visible Book Languages"
-msgstr ""
+msgstr "Zobrazené jazyky knih"
 
 #: cps/templates/user_table.html:139
 msgid "Edit Allowed Tags"
-msgstr ""
+msgstr "Upravit povolené štítky"
 
 #: cps/templates/user_table.html:139
 msgid "Allowed Tags"
-msgstr ""
+msgstr "Povolené štítky"
 
 #: cps/templates/user_table.html:140
 msgid "Edit Denied Tags"
-msgstr ""
+msgstr "Upravit zakázané štítky"
 
 #: cps/templates/user_table.html:140
 msgid "Denied Tags"
-msgstr ""
+msgstr "Zakázané štítky"
 
 #: cps/templates/user_table.html:141
 msgid "Edit Allowed Column Values"
-msgstr ""
+msgstr "Upravit povolné sloupce"
 
 #: cps/templates/user_table.html:141
 msgid "Allowed Column Values"
-msgstr ""
+msgstr "Povolené sloupce"
 
 #: cps/templates/user_table.html:142
 msgid "Edit Denied Column Values"
-msgstr ""
+msgstr "Urapravit zakázané sloupce"
 
 #: cps/templates/user_table.html:142
 msgid "Denied Column Values"
-msgstr ""
+msgstr "Zakázané sloupce"
 
 #: cps/templates/user_table.html:144
 msgid "Change Password"
-msgstr ""
+msgstr "Změnit heslo"
 
 #: cps/templates/user_table.html:147
 msgid "View"
-msgstr ""
+msgstr "Zobrazit"
 
 #: cps/templates/user_table.html:150
 msgid "Edit Public Shelves"
-msgstr ""
+msgstr "Upravit veřejné police"
 
 #: cps/templates/user_table.html:152
 msgid "Sync selected Shelves with Kobo"
@@ -3745,5 +3745,5 @@ msgstr ""
 
 #: cps/templates/user_table.html:156
 msgid "Show Read/Unread Section"
-msgstr ""
+msgstr "Zobrazit sekci přečtených/nepřečtených"
 

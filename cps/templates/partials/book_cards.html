@@ -1,10 +1,10 @@
 {% set horizontal = horizontal|default(false) %}
 
 {% if horizontal %}
-  <div style="display:flex; gap:12px; overflow-x:auto; padding-bottom:10px; flex-wrap:nowrap; align-items:flex-start;">
+  <div class="inner-track" style="display:flex; justify-content:center; gap:12px; overflow-x:auto; padding-bottom:10px; flex-wrap:nowrap; align-items:flex-start;">
     {% if entries and entries[0] %}
       {% for entry in entries %}
-        <div class="col-sm-3 col-lg-2 col-xs-6 book session" id="books" style="flex:0 0 auto; float:none;">
+        <div class="col-sm-3 col-lg-2 col-xs-6 book session carousel-item-fix" id="books" style="flex:0 0 auto; float:none;">
           <div class="cover">
             <a href="{{ url_for('web.show_book', book_id=entry.Books.id) }}" {% if simple==false %}data-toggle="modal" data-target="#bookDetailsModal" data-remote="false"{% endif %}>
               <span class="img" title="{{ entry.Books.title }}">
