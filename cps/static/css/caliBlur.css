@@ -2974,7 +2974,7 @@ body > div.container-fluid > div > div.col-sm-10 > div > div > div.col-sm-3.col-
 
 .book-meta > h2 {
     font-size: px;
-    color: #b00000;
+    color: #8b0000;
     font-weight: 400;
     line-height: 1;
     margin: 0;
@@ -3303,7 +3303,7 @@ div.btn-group[role=group][aria-label="Download, send to Kindle, reading"] .dropd
 }
 
 .book-meta > .bookinfo .btn-info, .book-meta > .bookinfo .btn-success {
-    background-color: #b22222;
+    background-color: #8b0000;
     color: hsla(0, 0%, 100%, .7);
     font-size: 13px;
     display: inline-block;

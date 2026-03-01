@@ -199,22 +199,22 @@
     </div>
   </div>
 {%  endif %}
-  <div class="row form-group">
-    <h2>{{_('Administration')}}</h2>
-    <a class="btn btn-default" id="debug" href="{{url_for('admin.download_debug')}}">{{_('Download Debug Package')}}</a>
-    <a class="btn btn-default" id="logfile" href="{{url_for('admin.view_logfile')}}">{{_('View Logs')}}</a>
-  </div>
-  <div class="row form-group">
-    <div class="btn btn-default" id="restart_database" data-toggle="modal" data-target="#StatusDialog">{{_('Reconnect Calibre Database')}}</div>
-  </div>
-  <div class="row form-group">
-    <div class="btn btn-default" id="admin_restart" data-toggle="modal" data-target="#RestartDialog">{{_('Restart')}}</div>
-    <div class="btn btn-default" id="admin_stop" data-toggle="modal" data-target="#ShutdownDialog">{{_('Shutdown')}}</div>
-  </div>
-{% if config.schedule_metadata_backup %}
-  <div class="row form-group">
-    <div class="btn btn-default" id="metadata_backup" data-toggle="modal" data-target="#StatusDialog">{{_('Queue all books for metadata backup')}}</div>
-  </div>
+    <div class="row form-group">
+      <h2 style="color: #eee; font-size: 24px; font-weight: bold;">{{_('Administration')}}</h2>
+      <a class="btn btn-default" id="debug" href="{{url_for('admin.download_debug')}}">{{_('Download Debug Package')}}</a>
+      <a class="btn btn-default" id="logfile" href="{{url_for('admin.view_logfile')}}">{{_('View Logs')}}</a>
+    </div>
+    <div class="row form-group">
+      <div class="btn btn-default" id="restart_database" data-toggle="modal" data-target="#StatusDialog">{{_('Reconnect Calibre Database')}}</div>
+    </div>
+    <div class="row form-group">
+      <div class="btn btn-default" id="admin_restart" data-toggle="modal" data-target="#RestartDialog">{{_('Restart')}}</div>
+      <div class="btn btn-default" id="admin_stop" data-toggle="modal" data-target="#ShutdownDialog">{{_('Shutdown')}}</div>
+    </div>
+  {% if config.schedule_metadata_backup %}
+    <div class="row form-group">
+      <div class="btn btn-default" id="metadata_backup" data-toggle="modal" data-target="#StatusDialog">{{_('Queue all books for metadata backup')}}</div>
+    </div>
 {%  endif %}
   <div class="row">
     <div class="col">

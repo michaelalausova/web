@@ -334,7 +334,7 @@ msgstr "Nastavení e-mailového serveru aktualizováno"
 
 #: cps/admin.py:1379 cps/templates/admin.html:195
 msgid "Edit Scheduled Tasks Settings"
-msgstr ""
+msgstr "Upravit nastavení plánovaných úloh"
 
 #: cps/admin.py:1391
 msgid "Invalid start time for task specified"
@@ -849,7 +849,7 @@ msgstr "Pouze jpg/jpeg jsou podporované soubory pro obal"
 
 #: cps/helper.py:975 cps/helper.py:1133
 msgid "Cover"
-msgstr ""
+msgstr "Obálka"
 
 #: cps/helper.py:992
 msgid "UnRar binary file not found"
@@ -1317,7 +1317,7 @@ msgstr ""
 
 #: cps/tasks_status.py:73
 msgid "Cancelled"
-msgstr ""
+msgstr "Zrušeno"
 
 #: cps/tasks_status.py:75
 msgid "Unknown Status"
@@ -1368,7 +1368,7 @@ msgstr ""
 #: cps/web.py:551
 #, python-format
 msgid "Author: %(name)s"
-msgstr "Autoři: %(name)s"
+msgstr "Autor: %(name)s"
 
 #: cps/web.py:587
 #, python-format
@@ -1402,7 +1402,7 @@ msgstr "Štítek: %(name)s"
 #: cps/web.py:733
 #, python-format
 msgid "Language: %(name)s"
-msgstr "Jazyky: %(name)s"
+msgstr "Jazyk: %(name)s"
 
 #: cps/templates/admin.html:16 cps/web.py:976
 msgid "Downloads"
@@ -1486,7 +1486,7 @@ msgstr ""
 
 #: cps/web.py:1433 cps/web.py:1458
 msgid "Wrong Username or Password"
-msgstr ""
+msgstr "Chybné uživatelské jméno nebo heslo"
 
 #: cps/web.py:1440
 msgid "New Password was sent to your email address"
@@ -1512,7 +1512,7 @@ msgstr "%(name)s profil"
 
 #: cps/web.py:1535
 msgid "Success! Profile Updated"
-msgstr ""
+msgstr "Profil upraven"
 
 #: cps/web.py:1539
 msgid "Oops! An account already exists for this Email."
@@ -1567,7 +1567,7 @@ msgstr "Převaděč eknih selhal: %(error)s"
 
 #: cps/tasks/convert.py:347
 msgid "Convert"
-msgstr ""
+msgstr "Převést"
 
 #: cps/tasks/database.py:26
 msgid "Reconnecting Calibre database"
@@ -1918,7 +1918,7 @@ msgstr "Více od"
 #: cps/templates/listenmp3.html:62
 #, python-format
 msgid "Book %(index)s of %(range)s"
-msgstr "Kniha %(index)s ze série %(range)s"
+msgstr "%(index)s díl ze série %(range)s"
 
 #: cps/templates/basic_detail.html:41 cps/templates/book_edit.html:106
 #: cps/templates/detail.html:165 cps/templates/listenmp3.html:69
@@ -2680,7 +2680,7 @@ msgstr "Požadovat velká písmena"
 
 #: cps/templates/config_edit.html:418
 msgid "Enforce characters (needed For Chinese/Japanese/Korean Characters)"
-msgstr "Požadovat speciální znaky (požadováno pro čísnké/japonské/korejské znaky)"
+msgstr "Požadovat speciální znaky (nutné pro čísnké/japonské/korejské znaky)"
 
 #: cps/templates/config_edit.html:422
 msgid "Enforce special characters"
@@ -2768,7 +2768,7 @@ msgstr "Výchozí jazyk"
 
 #: cps/templates/config_view_edit.html:131
 msgid "Default Visible Language of Books"
-msgstr ""
+msgstr "Vychozí jazyk zobrazovaných knih"
 
 #: cps/templates/config_view_edit.html:147
 msgid "Default Visibilities for New Users"
