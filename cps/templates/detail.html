@@ -91,6 +91,23 @@
     .carousel .book .cover img { height: 180px; }
     .carousel .book { width: 120px; }
   }
+
+/* Zmenšíme mezery mezi řádky informací */
+  .series-info p, .rating p, .identifiers p, .tags p { 
+    margin-bottom: 2px !important; 
+    margin-top: 0 !important; 
+  }
+  
+  /* Zmenšíme mezery mezi samotnými bloky */
+  .rating, .identifiers, .tags { 
+    margin-top: 0 !important; 
+    margin-bottom: 5px !important; 
+  }
+
+  /* Aby autor nebyl moc odskočený od nadpisu */
+  h2#title { margin-bottom: 5px; }
+  p.author { margin-bottom: 10px; }
+
 </style>
 
 {% endblock %}
@@ -200,7 +217,7 @@
                 {% endfor %}
             </p>
 
-            <div class="series-info" style="margin-bottom: 10px;">
+            <div class="series-info">
                 {% if entry.series|length > 0 %}
                     <p>{{ _("Book %(index)s of %(range)s", index=entry.series_index|formatfloat(2), range=(url_for('web.books_list', data='series', sort_param='stored', book_id=entry.series[0].id)|escapedlink(entry.series[0].name))|safe) }}</p>
                 {% endif %}
@@ -213,33 +230,6 @@
                     <p>{{_('Language')}}: <span style="color: #fff;">{% for language in entry.languages %}{{language.language_name}}{% if not loop.last %}, {% endif %}{% endfor %}</span></p>
                 {% endif %}
             </div>
-
-            {% if entry.ratings.__len__() > 0 %}
-                <div class="rating">
-                    <p>
-                        {% for number in range((entry.ratings[0].rating/2)|int(2)) %}
-                            <span class="glyphicon glyphicon-star good"></span>
-                            {% if loop.last and loop.index < 5 %}
-                                {% for numer in range(5 - loop.index) %}
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                {% endfor %}
-                            {% endif %}
-                        {% endfor %}
-                    </p>
-                </div>
-            {% endif %}
-
-            {% if entry.identifiers|length > 0 %}
-                <div class="identifiers">
-                    <p>
-                        <span class="glyphicon glyphicon-link"></span>
-                        {% for identifier in entry.identifiers %}
-                            <a href="{{ identifier|escape }}" target="_blank" class="btn btn-xs btn-success"
-                               role="button">{{ identifier.format_type() }}</a>
-                        {% endfor %}
-                    </p>
-                </div>
-            {% endif %}
 
             {% if entry.tags|length > 0 %}
                 <div class="tags" style="margin-top: 10px; margin-bottom: 15px;">
@@ -268,7 +258,7 @@
             {% if entry.comments|length > 0 and entry.comments[0].text|length > 0 %}
                 <div class="full-comments" style="margin-bottom: 20px;">
                     <h3 id="description" style="color: #8b0000; font-weight: bold; margin-top: 20px;">Anotace</h3>
-                    <div style="color: #ccc; line-height: 1.6;">
+                    <div style="color: #eee; line-height: 1.6;">
                         {{ entry.comments[0].text|safe }}
                     </div>
                 </div>
@@ -276,10 +266,10 @@
 
             {# --- CAROUSEL SEKCIA --- #}
             {% set raw_books = author_books or (entry.authors[0].books if entry.authors else []) %}
-            {% if raw_books|length > 1 %}
             <div id="carousel-section">
                 <h3 style="color: #8b0000; font-weight: bold; margin-bottom: 15px;">Další knihy od autora</h3>
                 
+                {% if raw_books|length > 1 %}
                 <div class="carousel" id="carousel-author">
                     <button class="carousel-btn left" type="button" data-dir="-1" aria-label="Předchozí">&lsaquo;</button>
 
@@ -317,8 +307,10 @@
 
                     <button class="carousel-btn right" type="button" data-dir="1" aria-label="Další">&rsaquo;</button>
                 </div>
+                {% else %}
+                    <p style="color: #eee; font-style: italic;">Od tohoto autora není v knihovně žádná další kniha.</p>
+                {% endif %}
             </div>
-            {% endif %}
 
             <div class="more-stuff" style="margin-top: 20px; clear: both;">
                 {% if current_user.role_edit() %}
@@ -327,9 +319,6 @@
                             <a href="{{ url_for('edit-book.show_edit_book', book_id=entry.id) }}"
                                class="btn btn-sm btn-primary" id="edit_book" role="button"><span
                                     class="glyphicon glyphicon-edit"></span> {{ _('Edit Metadata') }}</a>
-                            <button type="button" class="btn btn-sm btn-danger" id="delete_book" data-toggle="modal" data-target="#deleteModal">
-                                <span class="glyphicon glyphicon-trash"></span> {{ _('Delete Book') }}
-                            </button>
                         </div>
                         <div class="btn btn-default btn-sm" data-back="{{ url_for('web.index') }}" id="back">{{_('Cancel')}}</div>
                    </div>
@@ -338,35 +327,42 @@
         </div>
     </div>
 </div>
-
-{% if current_user.role_edit() %}
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="deleteModalLabel">{{ _('Delete Book') }}</h4>
-      </div>
-      <div class="modal-body">
-        {{ _('Are you sure you want to delete this book?') }}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">{{ _('Cancel') }}</button>
-        <form action="{{ url_for('edit-book.delete_book', book_id=entry.id) }}" method="POST" style="display: inline;">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-            <button type="submit" class="btn btn-danger">{{ _('Delete') }}</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-{% endif %}
 {% endblock %}
 
 {% block js %}
 <script src="{{ url_for('static', filename='js/fullscreen.js') }}"></script>
-<script>
-  (function () {
+<script type="text/javascript">
+  $(function() {
+    // --- ORIGINÁLNÍ LOGIKA PRO PŘEČTENO ---
+    $('#have_read_cb').on('change', function() {
+      var form = $('#have_read_form');
+      $.ajax({
+        type: "POST",
+        url: form.attr('action'),
+        data: form.serialize(),
+        success: function(data) {
+          // Najdeme ikonu oka v horním menu (navbaru)
+          var navIcon = $('#read-icon span');
+          var isChecked = $('#have_read_cb').is(':checked');
+          
+          if (isChecked) {
+            // Přepneme oko v liště na "otevřené"
+            navIcon.removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open');
+          } else {
+            // Přepneme oko v liště na "zavřené"
+            navIcon.removeClass('glyphicon-eye-open').addClass('glyphicon-eye-close');
+          }
+        },
+        error: function() {
+            // Pokud se uložení nepovede, vrátíme checkbox do původního stavu
+            alert("Chyba při ukládání stavu přečtení.");
+            var cb = $('#have_read_cb');
+            cb.prop('checked', !cb.prop('checked'));
+        }
+      });
+    });
+
+    // --- TVŮJ CAROUSEL ---
     function getStepPx(track) {
       if (!track || track.children.length === 0) return 200;
       if (track.children.length >= 2) {
@@ -389,6 +385,6 @@
       const dir = parseInt(btn.getAttribute('data-dir'), 10) || 1;
       scrollTrack(track, dir);
     });
-  })();
+  });
 </script>
 {% endblock %}

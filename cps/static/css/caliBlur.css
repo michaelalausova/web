@@ -273,7 +273,7 @@ body.blur .row-fluid .col-sm-10 {
 }
 
 #scnd-nav > li.active a, .authorlist #nav_author a, .catlist #nav_cat a, .langlist #nav_lang a, .serieslist #nav_serie a {
-    color: #b22222;
+    color: #8b0000
 }
 
 #scnd-nav > li.active:hover a, .authorlist #nav_author:hover a, .catlist #nav_cat:hover a, .langlist #nav_lang:hover a, .serieslist #nav_serie:hover a {
@@ -704,7 +704,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-header > a
     width: 240px;
     height: 60px;
     text-align: left;
-    color: #b22222 !important;
+    color: #8b0000 !important;
     font-size: 15px;
     font-family: Open Sans Bold, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-stretch: normal;
@@ -772,7 +772,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-header > a
 }
 
 .home-btn > a {
-    color: #b22222;
+    color: #8b0000;
     font-family: plex-icons-new, serif;
     line-height: 60px;
     position: relative;
@@ -1191,7 +1191,7 @@ body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-collapse.c
 body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-collapse.collapse > ul > li > a {
     height: 60px;
     padding: 20px 10px;
-    color: #b22222
+    color: #8b0000;
 }
 
 body > div.navbar.navbar-default.navbar-static-top > div > div.navbar-collapse.collapse > ul > li > #top_admin > .glyphicon-dashboard::before {
@@ -1351,7 +1351,7 @@ body > div.container-fluid > div > div.col-sm-10 > div > form > a:hover {
 
 .navigation li a:hover {
     background: 0 0;
-    color: #b22222
+    color: #8b0000;
 }
 
 #nav_hot .glyphicon-fire::before {
@@ -3183,7 +3183,7 @@ div.btn-group[role=group][aria-label="Download, send to Kindle, reading"] > div.
     height: 60px;
     margin: 0;
     padding-left: 25px;
-    color: hsla(0, 0%, 100%, .7);
+    color: transparent;
     font-family: "Open Sans Semibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     line-height: 60px;
@@ -3304,7 +3304,7 @@ div.btn-group[role=group][aria-label="Download, send to Kindle, reading"] .dropd
 
 .book-meta > .bookinfo .btn-info, .book-meta > .bookinfo .btn-success {
     background-color: #8b0000;
-    color: hsla(0, 0%, 100%, .7);
+    color: #ffffffe;
     font-size: 13px;
     display: inline-block;
     border-radius: 4px;
